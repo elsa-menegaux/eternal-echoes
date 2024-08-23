@@ -16,6 +16,7 @@ public class PlayerStats : MonoBehaviour
 	private double currentCritChance;
 	private double currentCritDamage;
 	private double currentDodgeRate;
+	private int money;
 	private bool gameOver;
 	
 	
@@ -32,6 +33,7 @@ public class PlayerStats : MonoBehaviour
 		currentCritChance = startingPlayerReflexes * 1.5 ; //7.5% default
 		currentCritDamage = 2 * (startingPlayerTechnical * 0.2); //2x mult default
 		currentDodgeRate = startingPlayerReflexes * 1.5; //7.5% default
+		money = 0;
     }
 	
 	public void TakeDamage(int damage)
@@ -51,5 +53,10 @@ public class PlayerStats : MonoBehaviour
 			gameOver=true;
 			Destroy(gameObject);
 		}
+	}
+	
+	public void GainMoney(int reward)
+	{
+		money+=reward;
 	}
 }

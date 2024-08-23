@@ -9,6 +9,7 @@ public class EnemyStats : MonoBehaviour
 	[SerializeField] private int enemyIntelligence = 5;
 	[SerializeField] private int enemyReflexes = 5;
 	[SerializeField] private int enemyTechnical = 5;
+	[SerializeField] private int enemyReward = 10;
 	
 	private int currentHealth;
 	private int currentDamage;
@@ -47,7 +48,18 @@ public class EnemyStats : MonoBehaviour
 	{
 		if (currentHealth <= 0)
 		{
+			OnDeath();
 			Destroy(gameObject);
+		}
+	}
+	
+	private void OnDeath(GameObject killer)	
+	{
+		EnemyStats currentHealth = target.GetComponent<EnemyStats>();
+		if (currentHealth<=0)
+		{
+			PlayerStats money = killer.GetComponent<PlayerStats>();
+			money.GainMoney(moneyReward);
 		}
 	}
 }
