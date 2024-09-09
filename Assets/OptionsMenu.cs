@@ -8,12 +8,47 @@ using System.Linq;
 
 public class OptionsMenu : MonoBehaviour
 {
+    public class IntRes : IComparable<IntRes>
+    {
+        public int width;
+        public int height;
+
+        public IntRes(int width, int height)
+        {
+            this.width = width;
+            this.height = height;
+        }
+
+        public int CompareTo(IntRes other)
+        {
+            return (width.CompareTo(other.width) + height.CompareTo(other.height)) / 2;
+        }
+
+        // override object.Equals
+        public override bool Equals(object obj)
+        {
+            if (obj == null || GetType() != obj.GetType())
+            {
+                return false;
+            }
+            IntRes resobj = (IntRes) obj;
+
+            return resobj.width == width && resobj.height == height;
+        }
+        
+        // override object.GetHashCode
+        public override int GetHashCode()
+        {
+            return this.width.GetHashCode() * 17 + this.height.GetHashCode();
+        }
+    }
+
     public AudioMixer audioMixer;
     public TMP_Dropdown resolutionDropdown;
     public TMP_Dropdown refreshRateDropdown;
     public TMP_Dropdown qualityDropdown;
 
-    int[][] resolutionsArray;
+    IntRes[] resolutionsArray;
     RefreshRate[] refreshRatesArray;
 
     public void SetVolume (float volume)
@@ -36,26 +71,26 @@ public class OptionsMenu : MonoBehaviour
         //Gather resolutions and refresh-rates information and separate them out
         Resolution[] providedResolutions = Screen.resolutions;
 
-        HashSet<RefreshRate> refreshRatesSet = new HashSet<RefreshRate>();
-        HashSet<int[]> resolutionsSet = new HashSet<int[]>();
+        SortedSet<RefreshRate> refreshRatesSet = new SortedSet<RefreshRate>();
+        SortedSet<IntRes> resolutionsSet = new SortedSet<IntRes>();
 
         foreach (Resolution res in providedResolutions)
         {
             refreshRatesSet.Add(res.refreshRateRatio);
-            resolutionsSet.Add(new int[]{res.width, res.height});
+            resolutionsSet.Add(new IntRes(res.width, res.height));
         }
 
         //Set Resolutions Dropdown
-        resolutionsArray = resolutionsSet.ToArray<int[]>();
+        resolutionsArray = resolutionsSet.ToArray<IntRes>();
 
         List<string> options = new List<string>();
         int currentResolutionIndex = 0;
         for (int i = 0; i < resolutionsArray.Length; i++)
         {
-            string option = resolutionsArray[i][0] + " x " + resolutionsArray[i][1];
+            string option = resolutionsArray[i].width + " x " + resolutionsArray[i].height;
             options.Add(option);
 
-            if (resolutionsArray[i][0] == Screen.currentResolution.width && resolutionsArray[i][1] == Screen.currentResolution.height)
+            if (resolutionsArray[i].width == Screen.currentResolution.width && resolutionsArray[i].height == Screen.currentResolution.height)
             {
                 currentResolutionIndex = i;
             }
@@ -93,8 +128,8 @@ public class OptionsMenu : MonoBehaviour
 
     public void SetResolution(int resolutionIndex)
     {
-        int[] resolution = resolutionsArray[resolutionIndex];
-        Screen.SetResolution(resolution[0], resolution[1], Screen.fullScreenMode, Screen.currentResolution.refreshRateRatio);
+        IntRes resolution = resolutionsArray[resolutionIndex];
+        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreenMode, Screen.currentResolution.refreshRateRatio);
     }
 
     public void SetRefreshRate(int refreshRateIndex)
