@@ -44,22 +44,23 @@ public class EnemyStats : MonoBehaviour
 		currentHealth += heal;
 	}
 	
-	public void DetectDeath() 
+	public void DetectDeath(GameObject killer) 
 	{
 		if (currentHealth <= 0)
 		{
-			OnDeath();
-			Destroy(gameObject);
+			OnDeath(killer);
 		}
 	}
 	
 	private void OnDeath(GameObject killer)	
 	{
-		EnemyStats currentHealth = target.GetComponent<EnemyStats>();
-		if (currentHealth<=0)
+		// Make sure the killer (player) has PlayerStats component
+		PlayerStats playerStats = killer.GetComponent<PlayerStats>();
+		if (playerStats != null)
 		{
-			PlayerStats money = killer.GetComponent<PlayerStats>();
-			money.GainMoney(moneyReward);
+			playerStats.GainMoney(enemyReward); // Award money to the player
 		}
+
+		Destroy(gameObject); // Destroy enemy after death
 	}
 }
