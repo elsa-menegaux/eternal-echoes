@@ -22,6 +22,8 @@ public class EnemyEncounter : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.Log("Player collisinon");
+        
         if(collision.gameObject.CompareTag("Enemy")){
             Debug.Log("Player encountered an enemy");
             UnityEngine.SceneManagement.SceneManager.LoadScene(FightModeScene);

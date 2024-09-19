@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 986838c7e2cc1ef4e88b92dceb7173d9
+guid: 783a09c54f5165942b07b0068f4b48d3
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: small isometric tiles_0
+      name: small isometric colliders_0
       rect:
         serializedVersion: 2
         x: 0
@@ -105,20 +105,20 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d6a4d7ab5d80eeb419586cdc4db8eff7
-      internalID: 478912973
+      spriteID: 56e0adfd32cf36746a0c98514d378e56
+      internalID: 515883992
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: small isometric tiles_1
+      name: small isometric colliders_1
       rect:
         serializedVersion: 2
         x: 32
@@ -126,24 +126,20 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape:
-      - - {x: -16, y: 16}
-        - {x: 16, y: 16}
-        - {x: 16, y: -16}
-        - {x: -16, y: -16}
+      physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3725d15ac1661c342921e13646530a3b
-      internalID: -1090875427
+      spriteID: ee9ab0be685fbd445aa6cef8c814c1c6
+      internalID: 1918658173
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: small isometric tiles_2
+      name: small isometric colliders_2
       rect:
         serializedVersion: 2
         x: 64
@@ -151,20 +147,20 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ecb18821f870a904496aab0ba4011968
-      internalID: 810151735
+      spriteID: 263c11fe7af038c49bb41d04bae46604
+      internalID: -2111088085
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: small isometric tiles_3
+      name: small isometric colliders_3
       rect:
         serializedVersion: 2
         x: 96
@@ -172,20 +168,20 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1e77f279b18ed454a928390a62911ad5
-      internalID: -1284201806
+      spriteID: 7982981ba64c21543ae92d7dd6d0a5ac
+      internalID: 385956859
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: small isometric tiles_4
+      name: small isometric colliders_4
       rect:
         serializedVersion: 2
         x: 128
@@ -193,20 +189,20 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de7e40a08f8ce094c93f5f60d82c2bf8
-      internalID: -1282782944
+      spriteID: 401cfcb4e684d9141be9114e84eb5eab
+      internalID: -1410391025
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: small isometric tiles_5
+      name: small isometric colliders_5
       rect:
         serializedVersion: 2
         x: 160
@@ -214,20 +210,20 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ef5a211949cd2404f8c61505bca682a5
-      internalID: 169373642
+      spriteID: bcee0284f492b4a41af55e9dc60822f6
+      internalID: -1324984511
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: small isometric tiles_6
+      name: small isometric colliders_6
       rect:
         serializedVersion: 2
         x: 0
@@ -235,20 +231,20 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: abee9332a19044c40be75e6803d08955
-      internalID: 72789928
+      spriteID: 9539e36fce3d6c143ac0adf4ae3ecd7d
+      internalID: -459607148
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: small isometric tiles_7
+      name: small isometric colliders_7
       rect:
         serializedVersion: 2
         x: 32
@@ -256,62 +252,20 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d25cd58f8f608fd438c09530c9225285
-      internalID: -103695110
+      spriteID: 8e28149ecebe1b34ba3e547146441b3a
+      internalID: 171192983
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: small isometric tiles_8
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 14a0890fbc842d04bafd289f67a9b358
-      internalID: -1789462185
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: small isometric tiles_9
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9e73d0707a4e6b441930d80f85f9211f
-      internalID: -1525442361
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: small isometric tiles_10
+      name: small isometric colliders_8
       rect:
         serializedVersion: 2
         x: 128
@@ -319,20 +273,20 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e172da8b8c8f6174b967ca802fe2e140
-      internalID: -1677648133
+      spriteID: d57ae12bcb7bb8d4f9bbec6a08dad7f8
+      internalID: 1661036742
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: small isometric tiles_11
+      name: small isometric colliders_9
       rect:
         serializedVersion: 2
         x: 160
@@ -340,20 +294,20 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4566bbb1e79b8b2459cc8e5b395918e2
-      internalID: -844846040
+      spriteID: 20497583810ebe643921eb39fc3fc8be
+      internalID: -391683142
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: small isometric tiles_12
+      name: small isometric colliders_10
       rect:
         serializedVersion: 2
         x: 0
@@ -361,20 +315,20 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 850da50b41f1ce046a87c0e147e731e3
-      internalID: -842892698
+      spriteID: ecd10443765767048ab805cd55e3846c
+      internalID: -1312236124
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: small isometric tiles_13
+      name: small isometric colliders_11
       rect:
         serializedVersion: 2
         x: 32
@@ -382,62 +336,20 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2481420ab3806aa4cbacd3811f00ab88
-      internalID: -1667093780
+      spriteID: 2d1ad20e755416a48a6b65dc76c788ef
+      internalID: -847648038
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: small isometric tiles_14
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0db78e6c9139c6a4d92ad3deccb92b2e
-      internalID: 2013775876
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: small isometric tiles_15
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fca1a3ea8e77a824d9e83ed9c2544524
-      internalID: -1192171418
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: small isometric tiles_16
+      name: small isometric colliders_12
       rect:
         serializedVersion: 2
         x: 128
@@ -445,20 +357,20 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a29190cea6644e438c76b503af0271c
-      internalID: -431443388
+      spriteID: dda70fc6b73c75246afc851b7c34ea2f
+      internalID: 1319085963
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: small isometric tiles_17
+      name: small isometric colliders_13
       rect:
         serializedVersion: 2
         x: 160
@@ -466,14 +378,14 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d705d433b1b567d469281ee1685280cb
-      internalID: -1494870950
+      spriteID: 24c03e45a1c7d4444810c02cb4664a8a
+      internalID: -170577473
       vertices: []
       indices: 
       edges: []
@@ -489,24 +401,20 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      small isometric tiles_0: 478912973
-      small isometric tiles_1: -1090875427
-      small isometric tiles_10: -1677648133
-      small isometric tiles_11: -844846040
-      small isometric tiles_12: -842892698
-      small isometric tiles_13: -1667093780
-      small isometric tiles_14: 2013775876
-      small isometric tiles_15: -1192171418
-      small isometric tiles_16: -431443388
-      small isometric tiles_17: -1494870950
-      small isometric tiles_2: 810151735
-      small isometric tiles_3: -1284201806
-      small isometric tiles_4: -1282782944
-      small isometric tiles_5: 169373642
-      small isometric tiles_6: 72789928
-      small isometric tiles_7: -103695110
-      small isometric tiles_8: -1789462185
-      small isometric tiles_9: -1525442361
+      small isometric colliders_0: 515883992
+      small isometric colliders_1: 1918658173
+      small isometric colliders_10: -1312236124
+      small isometric colliders_11: -847648038
+      small isometric colliders_12: 1319085963
+      small isometric colliders_13: -170577473
+      small isometric colliders_2: -2111088085
+      small isometric colliders_3: 385956859
+      small isometric colliders_4: -1410391025
+      small isometric colliders_5: -1324984511
+      small isometric colliders_6: -459607148
+      small isometric colliders_7: 171192983
+      small isometric colliders_8: 1661036742
+      small isometric colliders_9: -391683142
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
