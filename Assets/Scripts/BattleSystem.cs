@@ -26,6 +26,7 @@ public class BattleSystem : MonoBehaviour
 
     float damageModified;
 	
+	
 	public string battleSceneName;  // Name of your battle scene
 
     // Start is called before the first frame update
@@ -73,6 +74,7 @@ public class BattleSystem : MonoBehaviour
         state = BattleState.PLAYERTURN;
         PlayerTurn();
     }
+	
 
     IEnumerator PlayerAttack()
     {
@@ -171,6 +173,8 @@ public class BattleSystem : MonoBehaviour
         yield return new WaitForSeconds(1f);
         float damageModified = enemyUnit.currentDamage * enemyUnit.damageModifier;
         bool isDead = playerUnit.TakeDamage(damageModified);
+		
+		
         playerHUD.SetHP(playerUnit.currentHealth);
         yield return new WaitForSeconds(1f);
         if(isDead)

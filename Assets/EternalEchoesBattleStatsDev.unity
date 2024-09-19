@@ -1874,6 +1874,8 @@ MonoBehaviour:
   enemyHUD: {fileID: 1317425521}
   DialogueText: {fileID: 402224042}
   state: 0
+  damageNumberPrefab: {fileID: 8628681370709773524, guid: 5b8c1cfd4a5e6e04499e79f32987f3cc, type: 3}
+  canvas: {fileID: 0}
   battleSceneName: OverworldTestScene
 --- !u!4 &1541008825
 Transform:
