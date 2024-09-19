@@ -88,13 +88,35 @@ public class BattleSystem : MonoBehaviour
     IEnumerator PlayerAttack()
     {
         state = BattleState.PLAYERATTACKED;
-        float damageModified = playerUnit.currentDamage * playerUnit.damageModifier;
+		
+		// Check if the enemy dodges the attack
+		float dodgeRoll = Random.Range(0f, 100f);
+		if (dodgeRoll <= enemyUnit.currentDodgeRate)
+		{
+			DialogueText.text = $"{enemyUnit.Name} dodged the attack!";
+			yield return new WaitForSeconds(1f);
+			state = BattleState.ENEMYTURN;
+			StartCoroutine(EnemyTurn());
+			yield break; // Exit the coroutine if the attack is dodged
+		}
+		
+		// Calculate if the attack is a critical hit
+		float critRoll = Random.Range(0f, 100f);
+		float damageModified = playerUnit.currentDamage * playerUnit.damageModifier;
+	
+		if (critRoll <= playerUnit.currentCritChance)
+		{
+			damageModified *= playerUnit.currentCritDamage; // Apply critical damage multiplier
+			DialogueText.text = "Critical hit!";
+			yield return new WaitForSeconds(1f);
+		}
+		
         bool isDead = enemyUnit.TakeDamage(damageModified);
 
         enemyHUD.SetHP(enemyUnit.currentHealth);
         DialogueText.text = "The attack was successful!";
         //Damage Enemy
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
 
         if(isDead)
         {
@@ -180,7 +202,29 @@ public class BattleSystem : MonoBehaviour
     {
         DialogueText.text = enemyUnit.Name + " Attacks!";
         yield return new WaitForSeconds(1f);
-        float damageModified = enemyUnit.currentDamage * enemyUnit.damageModifier;
+		
+        // Check if the player dodges the attack
+		float dodgeRoll = Random.Range(0f, 100f);
+		if (dodgeRoll <= playerUnit.currentDodgeRate)
+		{
+			DialogueText.text = $"You dodged the attack!";
+			yield return new WaitForSeconds(1f);
+			state = BattleState.PLAYERTURN;
+			PlayerTurn();
+			yield break; // Exit the coroutine if the attack is dodged
+		}
+		
+		// Calculate if the attack is a critical hit
+		float critRoll = Random.Range(0f, 100f);
+		float damageModified = enemyUnit.currentDamage * enemyUnit.damageModifier;
+	
+		if (critRoll <= enemyUnit.currentCritChance)
+		{
+			damageModified *= enemyUnit.currentCritDamage; // Apply critical damage multiplier
+			DialogueText.text = "Critical hit!";
+			yield return new WaitForSeconds(1f);
+		}
+		
         bool isDead = playerUnit.TakeDamage(damageModified);
 		
 		
