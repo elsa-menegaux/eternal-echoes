@@ -18,8 +18,8 @@ public class PlayerMovement : MonoBehaviour
     {
         // Get input from the player
         // Works with zqsd and arrows
-        float xInput = Input.GetAxis("Horizontal");
-        float yInput = Input.GetAxis("Vertical");
+        float xInput = Input.GetAxisRaw("Horizontal");
+        float yInput = Input.GetAxisRaw("Vertical");
 
         // Parallel character movement with direction input, with speed factor to be able to influence gameplay further on
         Vector2 movement = new Vector2(xInput, yInput);
