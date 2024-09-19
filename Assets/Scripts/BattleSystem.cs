@@ -54,12 +54,21 @@ public class BattleSystem : MonoBehaviour
 			playerUnit.currentCritDamage = PlayerManager.Instance.playerStats.currentCritDamage;
 			playerUnit.currentDodgeRate = PlayerManager.Instance.playerStats.currentDodgeRate;
 			playerUnit.Money = PlayerManager.Instance.playerStats.Money;
-;
 
 			playerHUD.SetHUD(playerUnit); // Set up the HUD
 
 			GameObject enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
 			enemyUnit = enemyGO.GetComponent<EnemyStats>();
+			enemyUnit.Name = GameDataHolder.enemyStats.Name;
+			enemyUnit.Level = GameDataHolder.enemyStats.Level;
+			enemyUnit.maxHealth = GameDataHolder.enemyStats.maxHealth;
+			enemyUnit.currentHealth = GameDataHolder.enemyStats.currentHealth;
+			enemyUnit.currentDamage = GameDataHolder.enemyStats.currentDamage;
+			enemyUnit.currentAbilityDamage = GameDataHolder.enemyStats.currentAbilityDamage;
+			enemyUnit.currentCritChance = GameDataHolder.enemyStats.currentCritChance;
+			enemyUnit.currentCritDamage = GameDataHolder.enemyStats.currentCritDamage;
+			enemyUnit.currentDodgeRate = GameDataHolder.enemyStats.currentDodgeRate;
+			enemyUnit.damageModifier = GameDataHolder.enemyStats.damageModifier;
 			enemyHUD.SetHUD(enemyUnit);
 
 			DialogueText.text = "A shady looking " + enemyUnit.Name + " has snuck up...";

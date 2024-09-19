@@ -26,10 +26,17 @@ public class EnemyTrigger : MonoBehaviour
         other.gameObject.SetActive(false);
 		
 		// Get the EnemyState component
-		EnemyState enemyState = GetComponent<EnemyState>();
+		
+		EnemyStats enemyStats = GetComponent<EnemyStats>();
+		 if (enemyStats != null)
+        {
+			GameDataHolder.enemyStats = enemyStats;
+		}
     
+		EnemyState enemyState = GetComponent<EnemyState>();
 		if (enemyState != null)
 		{
+			GameDataHolder.enemyStats = enemyStats;
 			// Deactivate this enemy through its state manager
 			enemyState.MarkAsFought();
 		}

@@ -4,5 +4,5 @@ using UnityEngine;
 
 public static class GameDataHolder
 {
-    public static bool enemyRespawnTest = true;
+    public static EnemyStats enemyStats;  // Add this to store enemy stats
 }
