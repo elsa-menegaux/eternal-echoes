@@ -14,6 +14,14 @@ public class EnemyStats : Unit
 	// Start is called before the first frame update
     private void Start()
     {
+		if (GameDataHolder.enemyRespawnTest==false)
+		{
+			gameObject.SetActive(false);
+		}
+		else
+		{
+			gameObject.SetActive(true);
+		}
 		GetStats();
     }
 	

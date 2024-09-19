@@ -9,13 +9,20 @@ public class PlayerBattleHUD : MonoBehaviour
     public Text levelText;
     public Slider hpSlider;
 
-    public void SetHUD(PlayerStats Unit)
-    {
-        nameText.text = Unit.Name;
-        levelText.text = "Lvl "+Unit.Level;
-        hpSlider.maxValue = Unit.maxHealth;
-        hpSlider.value = Unit.currentHealth;
-    }
+    public void SetHUD(PlayerStats unit)
+	{
+		if (unit == null)
+		{
+			Debug.LogError("Unit is null in SetHUD!");
+			return; // Prevent further execution
+		}
+
+		nameText.text = unit.Name;
+		levelText.text = "Lvl " + unit.Level;
+		hpSlider.maxValue = unit.maxHealth;
+		hpSlider.value = unit.currentHealth;
+	}
+
 
     public void SetHP(float hp)
     {

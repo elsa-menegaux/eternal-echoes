@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public enum BattleState { START, PLAYERTURN, PLAYERATTACKED, PLAYERHEALED, ENEMYTURN, WON, LOST }
 
@@ -24,6 +25,8 @@ public class BattleSystem : MonoBehaviour
     public BattleState state;
 
     float damageModified;
+	
+	public string battleSceneName;  // Name of your battle scene
 
     // Start is called before the first frame update
     void Start()
@@ -36,15 +39,35 @@ public class BattleSystem : MonoBehaviour
     {
         GameObject playerGO = Instantiate(playerPrefab, playerBattleStation);
         playerUnit = playerGO.GetComponent<PlayerStats>();
+		
+		// Use the player's stats stored in GameData
+		if (PlayerManager.Instance.playerStats != null)
+		{   // Retrieve player stats from gamedataholder
+			playerUnit.Name = PlayerManager.Instance.playerStats.Name;
+			playerUnit.Level = PlayerManager.Instance.playerStats.Level;
+			playerUnit.maxHealth = PlayerManager.Instance.playerStats.maxHealth;
+			playerUnit.currentHealth = PlayerManager.Instance.playerStats.currentHealth;
+			playerUnit.currentDamage = PlayerManager.Instance.playerStats.currentDamage; 
+			playerUnit.currentAbilityDamage = PlayerManager.Instance.playerStats.currentAbilityDamage;
+			playerUnit.currentCritChance = PlayerManager.Instance.playerStats.currentCritChance;
+			playerUnit.currentCritDamage = PlayerManager.Instance.playerStats.currentCritDamage;
+			playerUnit.currentDodgeRate = PlayerManager.Instance.playerStats.currentDodgeRate;
+			playerUnit.Money = PlayerManager.Instance.playerStats.Money;
+;
 
-        GameObject enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
-        enemyUnit = enemyGO.GetComponent<EnemyStats>();
+			playerHUD.SetHUD(playerUnit); // Set up the HUD
 
-        DialogueText.text = "A shady looking "+enemyUnit.Name+" has snuck up...";
+			GameObject enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
+			enemyUnit = enemyGO.GetComponent<EnemyStats>();
+			enemyHUD.SetHUD(enemyUnit);
 
-        playerHUD.SetHUD(playerUnit);
-        enemyHUD.SetHUD(enemyUnit);
-
+			DialogueText.text = "A shady looking " + enemyUnit.Name + " has snuck up...";
+		}
+		else
+		{
+			Debug.LogError("GameData.playerStats is null!");
+		}
+		
         yield return new WaitForSeconds(2f);
 
         state = BattleState.PLAYERTURN;
@@ -100,12 +123,35 @@ public class BattleSystem : MonoBehaviour
         if (state == BattleState.WON)
         {
             DialogueText.text = "You won!";
+			playerUnit.Money =+ enemyUnit.Reward;
+			StartCoroutine(TransitionToOverworld());
         }
         else if (state == BattleState.LOST)
         {
             DialogueText.text = "You were defeated...";
+			StartCoroutine(TransitionToOverworld());
         }
     }
+	
+	IEnumerator TransitionToOverworld()
+	{
+		PlayerManager.Instance.playerStats.Name = playerUnit.Name;
+		PlayerManager.Instance.playerStats.Level= playerUnit.Level;
+		PlayerManager.Instance.playerStats.maxHealth = playerUnit.maxHealth;
+		PlayerManager.Instance.playerStats.currentHealth = playerUnit.currentHealth;
+		PlayerManager.Instance.playerStats.currentDamage = playerUnit.currentDamage; 
+		PlayerManager.Instance.playerStats.currentAbilityDamage = playerUnit.currentAbilityDamage;
+		PlayerManager.Instance.playerStats.currentCritChance = playerUnit.currentCritChance;
+		PlayerManager.Instance.playerStats.currentCritDamage = playerUnit.currentCritDamage;
+		PlayerManager.Instance.playerStats.currentDodgeRate = playerUnit.currentDodgeRate;
+		PlayerManager.Instance.playerStats.Money = playerUnit.Money;
+		
+		
+		yield return new WaitForSeconds(2f);
+		SceneManager.LoadScene("OverworldTestScene", LoadSceneMode.Single);
+		GameDataHolder.enemyRespawnTest = false;
+		PlayerManager.Instance.transform.GetChild(0).gameObject.SetActive(true);
+	}
 
     void PlayerTurn()
     {
@@ -147,5 +193,7 @@ public class BattleSystem : MonoBehaviour
             return;
         StartCoroutine(PlayerHeal());
     }
+	
+	
 }
 

@@ -1868,6 +1868,7 @@ MonoBehaviour:
   enemyHUD: {fileID: 1317425521}
   DialogueText: {fileID: 402224042}
   state: 0
+  battleSceneName: OverworldTestScene
 --- !u!4 &1541008825
 Transform:
   m_ObjectHideFlags: 0
