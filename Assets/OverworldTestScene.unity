@@ -3412,6 +3412,10 @@ PrefabInstance:
       propertyPath: damageModifier
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8231924251037045112, guid: b29933dd38a7b1a4e859770d8103aa6f, type: 3}
+      propertyPath: gameOverScreen
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

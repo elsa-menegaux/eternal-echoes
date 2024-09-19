@@ -40,4 +40,5 @@ public class PlayerStats : Unit
 	{
 		Money+=reward;
 	}
+	
 }
