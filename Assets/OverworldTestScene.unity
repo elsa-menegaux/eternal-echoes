@@ -541,8 +541,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3168825508293556820, guid: c6111ff84370c254eb60c6e37a0f3700, type: 3}
+      propertyPath: Name
+      value: Tanky Placeholder Fella
+      objectReference: {fileID: 0}
+    - target: {fileID: 3168825508293556820, guid: c6111ff84370c254eb60c6e37a0f3700, type: 3}
       propertyPath: maxHealth
-      value: 100
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3168825508293556820, guid: c6111ff84370c254eb60c6e37a0f3700, type: 3}
+      propertyPath: currentHealth
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 3733481413055175314, guid: c6111ff84370c254eb60c6e37a0f3700, type: 3}
       propertyPath: m_LocalPosition.x
@@ -590,7 +598,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6964381662158514715, guid: c6111ff84370c254eb60c6e37a0f3700, type: 3}
       propertyPath: m_Name
-      value: Enemy2
+      value: Tanky Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8531922525108383720, guid: c6111ff84370c254eb60c6e37a0f3700, type: 3}
       propertyPath: m_LocalScale.x
@@ -2117,8 +2125,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3168825508293556820, guid: c6111ff84370c254eb60c6e37a0f3700, type: 3}
+      propertyPath: Name
+      value: Damaging Placeholder Fella
+      objectReference: {fileID: 0}
+    - target: {fileID: 3168825508293556820, guid: c6111ff84370c254eb60c6e37a0f3700, type: 3}
       propertyPath: currentDamage
-      value: 100
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3168825508293556820, guid: c6111ff84370c254eb60c6e37a0f3700, type: 3}
+      propertyPath: damageModifier
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 3733481413055175314, guid: c6111ff84370c254eb60c6e37a0f3700, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2166,7 +2182,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6964381662158514715, guid: c6111ff84370c254eb60c6e37a0f3700, type: 3}
       propertyPath: m_Name
-      value: Enemy1
+      value: Damaging Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8531922525108383720, guid: c6111ff84370c254eb60c6e37a0f3700, type: 3}
       propertyPath: m_LocalScale.x
@@ -3456,6 +3472,10 @@ PrefabInstance:
     - target: {fileID: 5575793591764269486, guid: ccd64d51c74226a4a925299ddb22fd00, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6149420272344095080, guid: ccd64d51c74226a4a925299ddb22fd00, type: 3}
+      propertyPath: Name
+      value: Normal Placeholder Fella
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
