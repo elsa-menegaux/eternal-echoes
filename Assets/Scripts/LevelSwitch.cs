@@ -10,14 +10,15 @@ public class LevelSwitch : MonoBehaviour
     // If Exit zone is entered and collider is a player
     // Scene changes to another room without needing input
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D entity)
     {
         // For testing purpose, check the trigger works
-        print("Exit triggered");
+        Debug.Log("Exit triggered");
 
         // If it is indeed a player that collided, then switch levels
-        if (other.CompareTag("Player"))
+        if (entity.CompareTag("Player"))
         {
+            Debug.Log("Player detected");
             UnityEngine.SceneManagement.SceneManager.LoadScene(sceneBuildIndex);
         }
     }
