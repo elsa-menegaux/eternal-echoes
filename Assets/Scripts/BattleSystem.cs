@@ -148,8 +148,15 @@ public class BattleSystem : MonoBehaviour
 		
 		
 		yield return new WaitForSeconds(2f);
+		if (PlayerManager.Instance != null)
+        {
+            Debug.Log("PlayerManager is active with current health: " + PlayerManager.Instance.playerStats.currentHealth);
+        }
+        else
+        {
+            Debug.LogError("PlayerManager instance not found!");
+        }
 		SceneManager.LoadScene("OverworldTestScene", LoadSceneMode.Single);
-		GameDataHolder.enemyRespawnTest = false;
 		PlayerManager.Instance.transform.GetChild(0).gameObject.SetActive(true);
 	}
 

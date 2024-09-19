@@ -32,6 +32,8 @@ public class PlayerStats : Unit
     // Start is called before the first frame update
     private void Start()
     {
+		Debug.Log("Player Name: " + Name);
+        Debug.Log("Initial Health: " + currentHealth);
     }
 	
 	public void GainMoney(int reward)

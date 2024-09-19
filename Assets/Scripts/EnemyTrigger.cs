@@ -18,17 +18,26 @@ public class EnemyTrigger : MonoBehaviour
 }
 
     private void StartBattle(Collider2D other)
-    {
-		enemyRespawnTest = true;
-		
+    {		
 		PlayerManager.Instance.playerStats = other.GetComponent<PlayerStats>();
         // Load the battle scene
 		
 		// Make the player object invisible
         other.gameObject.SetActive(false);
 		
-		// Make the enemy object inactive
-        gameObject.SetActive(false); // This deactivates the enemy GameObject
+		// Get the EnemyState component
+		EnemyState enemyState = GetComponent<EnemyState>();
+    
+		if (enemyState != null)
+		{
+			// Deactivate this enemy through its state manager
+			enemyState.MarkAsFought();
+		}
+		else
+		{
+			Debug.LogError("EnemyState component not found on " + gameObject.name);
+			gameObject.SetActive(false); // Fallback if the component is missing
+		}
 		
         SceneManager.LoadScene(battleSceneName);
     }
