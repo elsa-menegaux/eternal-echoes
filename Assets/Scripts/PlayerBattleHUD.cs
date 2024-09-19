@@ -7,6 +7,8 @@ public class PlayerBattleHUD : MonoBehaviour
 {
     public Text nameText;
     public Text levelText;
+	public Text hpText;
+	public string max;
     public Slider hpSlider;
 
     public void SetHUD(PlayerStats unit)
@@ -21,11 +23,14 @@ public class PlayerBattleHUD : MonoBehaviour
 		levelText.text = "Lvl " + unit.Level;
 		hpSlider.maxValue = unit.maxHealth;
 		hpSlider.value = unit.currentHealth;
+		hpText.text = unit.currentHealth +"/"+unit.maxHealth;
+		max ="/"+unit.maxHealth;
 	}
 
 
     public void SetHP(float hp)
     {
         hpSlider.value = hp;
+		hpText.text = hp + max;
     }
 }
