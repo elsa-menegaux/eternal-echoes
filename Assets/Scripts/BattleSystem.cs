@@ -13,6 +13,9 @@ public class BattleSystem : MonoBehaviour
 
     public Transform playerBattleStation;
     public Transform enemyBattleStation;
+	
+	public Button attackButton;
+    public Button healButton;
 
     public PlayerBattleHUD playerHUD;
     public EnemyBattleHUD enemyHUD;
@@ -34,6 +37,9 @@ public class BattleSystem : MonoBehaviour
     {
         state = BattleState.START;
         StartCoroutine(SetupBattle());
+		
+		attackButton.interactable = false;
+        healButton.interactable = false;
     }
 
     IEnumerator SetupBattle()
@@ -89,6 +95,10 @@ public class BattleSystem : MonoBehaviour
     {
         state = BattleState.PLAYERATTACKED;
 		
+		// Disable buttons when the player is performing their action
+        attackButton.interactable = false;
+        healButton.interactable = false;
+		
 		// Check if the enemy dodges the attack
 		float dodgeRoll = Random.Range(0f, 100f);
 		if (dodgeRoll <= enemyUnit.currentDodgeRate)
@@ -139,6 +149,12 @@ public class BattleSystem : MonoBehaviour
     IEnumerator PlayerHeal()
     {
         state = BattleState.PLAYERHEALED;
+		
+		// Disable buttons when the player is performing their action
+        attackButton.interactable = false;
+        healButton.interactable = false;
+		
+		
         float damageModified = playerUnit.currentAbilityDamage * playerUnit.damageModifier;
         playerUnit.RegainHealth(damageModified);
         playerHUD.SetHP(playerUnit.currentHealth);
@@ -195,6 +211,8 @@ public class BattleSystem : MonoBehaviour
 
     void PlayerTurn()
     {
+		attackButton.interactable = true;
+        healButton.interactable = true;
         DialogueText.text = "Choose an Action...";
     }
 
@@ -233,6 +251,7 @@ public class BattleSystem : MonoBehaviour
         if(isDead)
         {
             state = BattleState.LOST;
+			playerUnit.currentHealth = playerUnit.maxHealth;
             EndBattle();
             //End Battle
         }

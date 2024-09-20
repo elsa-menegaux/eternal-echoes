@@ -47,19 +47,28 @@ public abstract class Unit : MonoBehaviour
 	
 	public bool TakeDamage(float damage)
 	{
-		currentHealth -= damage;
+		if ((currentHealth - damage) <=0)
+		{
+			currentHealth=0;
+		}
+		else
+		{
+			currentHealth -= damage;
+		}
 		bool deathState = DetectDeath();
 		return deathState;
 	}
 	
 	public void RegainHealth(float heal)
 	{
-		currentHealth += heal;
-		if (currentHealth > maxHealth)
+		if ((currentHealth + heal) >=maxHealth)
 		{
 			currentHealth = maxHealth;
 		}
-		
+		else
+		{
+			currentHealth += heal;
+		}
 	}
 	
 	public bool DetectDeath() 
