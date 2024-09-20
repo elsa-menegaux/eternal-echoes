@@ -1866,7 +1866,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8cfad05f7e0d2a44b67ce4db46b87e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPrefab: {fileID: 8793234464545662209, guid: 9bf0e054ddfb7e04fb323330231f4a05, type: 3}
+  playerPrefab: {fileID: 3642115927766167294, guid: 64d371c69135780409446cc9364f6e2d, type: 3}
   enemyPrefab: {fileID: 6964381662158514715, guid: c6111ff84370c254eb60c6e37a0f3700, type: 3}
   playerBattleStation: {fileID: 361078379}
   enemyBattleStation: {fileID: 1402399508}
@@ -1876,7 +1876,7 @@ MonoBehaviour:
   enemyHUD: {fileID: 1317425521}
   DialogueText: {fileID: 402224042}
   state: 0
-  battleSceneName: OverworldTestScene
+  battleSceneName: Room 1
 --- !u!4 &1541008825
 Transform:
   m_ObjectHideFlags: 0
