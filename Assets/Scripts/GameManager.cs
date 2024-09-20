@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-
+	
     public Dictionary<string, bool> enemyStatus = new Dictionary<string, bool>();
 
     private void Awake()

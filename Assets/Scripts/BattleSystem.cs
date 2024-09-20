@@ -9,7 +9,8 @@ public enum BattleState { START, PLAYERTURN, PLAYERATTACKED, PLAYERHEALED, ENEMY
 public class BattleSystem : MonoBehaviour
 {
     public GameObject playerPrefab;
-    public GameObject enemyPrefab;
+    //public GameObject enemyPrefab;
+	public GameObject enemyPrefab;
 
     public Transform playerBattleStation;
     public Transform enemyBattleStation;
@@ -31,11 +32,13 @@ public class BattleSystem : MonoBehaviour
 	
 	
 	public string battleSceneName;  // Name of your battle scene
+	
 
     // Start is called before the first frame update
     void Start()
     {
         state = BattleState.START;
+		
         StartCoroutine(SetupBattle());
 		
 		attackButton.interactable = false;
@@ -43,52 +46,78 @@ public class BattleSystem : MonoBehaviour
     }
 
     IEnumerator SetupBattle()
+{
+    // Instantiate player prefab and set up player stats
+    GameObject playerGO = Instantiate(playerPrefab, playerBattleStation);
+    playerUnit = playerGO.GetComponent<PlayerStats>();
+
+    // Use the player's stats stored in GameData
+    if (PlayerManager.Instance.playerStats != null)
     {
-        GameObject playerGO = Instantiate(playerPrefab, playerBattleStation);
-        playerUnit = playerGO.GetComponent<PlayerStats>();
-		
-		// Use the player's stats stored in GameData
-		if (PlayerManager.Instance.playerStats != null)
-		{   // Retrieve player stats from gamedataholder
-			playerUnit.Name = PlayerManager.Instance.playerStats.Name;
-			playerUnit.Level = PlayerManager.Instance.playerStats.Level;
-			playerUnit.maxHealth = PlayerManager.Instance.playerStats.maxHealth;
-			playerUnit.currentHealth = PlayerManager.Instance.playerStats.currentHealth;
-			playerUnit.currentDamage = PlayerManager.Instance.playerStats.currentDamage; 
-			playerUnit.currentAbilityDamage = PlayerManager.Instance.playerStats.currentAbilityDamage;
-			playerUnit.currentCritChance = PlayerManager.Instance.playerStats.currentCritChance;
-			playerUnit.currentCritDamage = PlayerManager.Instance.playerStats.currentCritDamage;
-			playerUnit.currentDodgeRate = PlayerManager.Instance.playerStats.currentDodgeRate;
-			playerUnit.Money = PlayerManager.Instance.playerStats.Money;
+        // Retrieve player stats from GameDataHolder
+        playerUnit.Name = PlayerManager.Instance.playerStats.Name;
+        playerUnit.Level = PlayerManager.Instance.playerStats.Level;
+        playerUnit.maxHealth = PlayerManager.Instance.playerStats.maxHealth;
+        playerUnit.currentHealth = PlayerManager.Instance.playerStats.currentHealth;
+        playerUnit.currentDamage = PlayerManager.Instance.playerStats.currentDamage;
+        playerUnit.currentAbilityDamage = PlayerManager.Instance.playerStats.currentAbilityDamage;
+        playerUnit.currentCritChance = PlayerManager.Instance.playerStats.currentCritChance;
+        playerUnit.currentCritDamage = PlayerManager.Instance.playerStats.currentCritDamage;
+        playerUnit.currentDodgeRate = PlayerManager.Instance.playerStats.currentDodgeRate;
+        playerUnit.Money = PlayerManager.Instance.playerStats.Money;
 
-			playerHUD.SetHUD(playerUnit); // Set up the HUD
+        playerHUD.SetHUD(playerUnit); // Set up the player HUD
 
-			GameObject enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
-			enemyUnit = enemyGO.GetComponent<EnemyStats>();
-			enemyUnit.Name = GameDataHolder.enemyStats.Name;
-			enemyUnit.Level = GameDataHolder.enemyStats.Level;
-			enemyUnit.maxHealth = GameDataHolder.enemyStats.maxHealth;
-			enemyUnit.currentHealth = GameDataHolder.enemyStats.currentHealth;
-			enemyUnit.currentDamage = GameDataHolder.enemyStats.currentDamage;
-			enemyUnit.currentAbilityDamage = GameDataHolder.enemyStats.currentAbilityDamage;
-			enemyUnit.currentCritChance = GameDataHolder.enemyStats.currentCritChance;
-			enemyUnit.currentCritDamage = GameDataHolder.enemyStats.currentCritDamage;
-			enemyUnit.currentDodgeRate = GameDataHolder.enemyStats.currentDodgeRate;
-			enemyUnit.damageModifier = GameDataHolder.enemyStats.damageModifier;
-			enemyHUD.SetHUD(enemyUnit);
+        // Load the appropriate enemy prefab based on the enemy's name from the Resources folder
+        if (GameDataHolder.Instance.enemyStats != null)
+        {
+            string enemyPrefabPath = "BattleEnemies/" + GameDataHolder.Instance.enemyname; // Assuming your enemy prefabs are in Resources/Enemies folder
+            GameObject enemyPrefab = Resources.Load<GameObject>(enemyPrefabPath);
+			Debug.Log("Enemy prefab found in Resources folder for: " + enemyPrefabPath);
 
-			DialogueText.text = "A shady looking " + enemyUnit.Name + " has snuck up...";
+            if (enemyPrefab != null)
+            {
+                GameObject enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
+                enemyUnit = enemyGO.GetComponent<EnemyStats>();
+
+                // Set enemy stats
+                enemyUnit.Name = GameDataHolder.Instance.enemyStats.Name;
+                enemyUnit.Level = GameDataHolder.Instance.enemyStats.Level;
+                enemyUnit.maxHealth = GameDataHolder.Instance.enemyStats.maxHealth;
+                enemyUnit.currentHealth = GameDataHolder.Instance.enemyStats.currentHealth;
+                enemyUnit.currentDamage = GameDataHolder.Instance.enemyStats.currentDamage;
+                enemyUnit.currentAbilityDamage = GameDataHolder.Instance.enemyStats.currentAbilityDamage;
+                enemyUnit.currentCritChance = GameDataHolder.Instance.enemyStats.currentCritChance;
+                enemyUnit.currentCritDamage = GameDataHolder.Instance.enemyStats.currentCritDamage;
+                enemyUnit.currentDodgeRate = GameDataHolder.Instance.enemyStats.currentDodgeRate;
+                enemyUnit.damageModifier = GameDataHolder.Instance.enemyStats.damageModifier;
+
+                enemyHUD.SetHUD(enemyUnit); // Set up the enemy HUD
+
+                DialogueText.text = "A " + enemyUnit.Name + " has appeared!";
+            }
+            else
+            {
+                Debug.LogError("Enemy prefab not found in Resources folder for: " + GameDataHolder.Instance.enemyStats.Name);
+            }
+        }
+        else
+        {
+			Debug.LogError("GameDataHolder.enemyStats is null!");
 		}
-		else
-		{
-			Debug.LogError("GameData.playerStats is null!");
-		}
-		
-        yield return new WaitForSeconds(2f);
-
-        state = BattleState.PLAYERTURN;
-        PlayerTurn();
-    }
+	
+		DialogueText.text = "A shady looking " + enemyUnit.Name + " has snuck up...";
+	}
+	else
+	{
+		Debug.LogError("PlayerManager.Instance.playerStats is null!");
+	}
+	
+	yield return new WaitForSeconds(2f);
+	
+	state = BattleState.PLAYERTURN;
+	PlayerTurn();
+	}
 	
 
     IEnumerator PlayerAttack()
@@ -212,7 +241,9 @@ public class BattleSystem : MonoBehaviour
         {
             Debug.LogError("PlayerManager instance not found!");
         }
-		SceneManager.LoadScene("OverworldTestScene", LoadSceneMode.Single);
+		string previousSceneName = GameDataHolder.Instance.previousSceneName; // Ensure to store this in GameDataHolder
+		SceneManager.LoadScene(previousSceneName, LoadSceneMode.Single);
+		
 		PlayerManager.Instance.transform.GetChild(0).gameObject.SetActive(true);
 	}
 
