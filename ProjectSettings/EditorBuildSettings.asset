@@ -23,16 +23,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Room 3.unity
     guid: 1dac0dc874f253840a7c6b5549490703
-  - enabled : 1
+  - enabled: 1
     path: Assets/Scenes/Room 4.unity
     guid: 06293cc37600e8a41a3e08f99c06ddf9
   - enabled: 1
     path: Assets/Scenes/Room 5.unity
     guid: aebae7afef083104da9b7dfefdf9f880
-   - enabled: 1
+  - enabled: 1
     path: Assets/Scenes/OverworldTestScene.unity
     guid: da974a491a2302f4c8bba4276d47d931
   - enabled: 1
     path: Assets/Scenes/EternalEchoesBattleStatsDev.unity
     guid: e404a1825356770489907f9b93ec2271
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: efd51a287d18f7b4c949f01bb0559bc8
   m_configObjects: {}
