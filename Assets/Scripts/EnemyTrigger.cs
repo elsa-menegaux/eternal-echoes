@@ -6,46 +6,51 @@ using UnityEngine.SceneManagement;
 public class EnemyTrigger : MonoBehaviour
 {
     public string battleSceneName;  // Name of your battle scene
+    private string currentSceneName; // Store the current scene name
 
     private void OnTriggerEnter2D(Collider2D other)
-{
-    if (other.CompareTag("Player"))
     {
-        // Optionally change color for feedback
-        //other.GetComponent<SpriteRenderer>().color = Color.red;
-        StartBattle(other);
+        if (other.CompareTag("Player"))
+        {
+            StartBattle(other);
+        }
     }
-}
 
     private void StartBattle(Collider2D other)
     {		
-		PlayerManager.Instance.playerStats = other.GetComponent<PlayerStats>();
-        // Load the battle scene
-		
-		// Make the player object invisible
+        // Store the current scene name
+        currentSceneName = SceneManager.GetActiveScene().name;
+
+        PlayerManager.Instance.playerStats = other.GetComponent<PlayerStats>();
+        
+        // Make the player object invisible
         other.gameObject.SetActive(false);
 		
-		// Get the EnemyState component
-		
-		EnemyStats enemyStats = GetComponent<EnemyStats>();
-		 if (enemyStats != null)
+        // Get the EnemyState component
+        EnemyStats enemyStats = GetComponent<EnemyStats>();
+        Debug.Log("EnemyStats found on " + gameObject.name);
+        
+        if (enemyStats != null)
         {
-			GameDataHolder.enemyStats = enemyStats;
-		}
+            GameDataHolder.Instance.enemyStats = enemyStats;
+            Debug.Log("EnemyStats assigned from " + gameObject.name + " to GameDataHolder");
+			GameDataHolder.Instance.enemyname = gameObject.name;
+        }
     
-		EnemyState enemyState = GetComponent<EnemyState>();
-		if (enemyState != null)
-		{
-			GameDataHolder.enemyStats = enemyStats;
-			// Deactivate this enemy through its state manager
-			enemyState.MarkAsFought();
-		}
-		else
-		{
-			Debug.LogError("EnemyState component not found on " + gameObject.name);
-			gameObject.SetActive(false); // Fallback if the component is missing
-		}
+        EnemyState enemyState = GetComponent<EnemyState>();
+        if (enemyState != null)
+        {
+            enemyState.MarkAsFought();
+        }
+        else
+        {
+            Debug.LogError("EnemyState component not found on " + gameObject.name);
+            gameObject.SetActive(false);
+        }
 		
+		GameDataHolder.Instance.previousSceneName = currentSceneName; 
+		
+        // Load the battle scene
         SceneManager.LoadScene(battleSceneName);
     }
 }

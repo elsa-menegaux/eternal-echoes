@@ -3447,7 +3447,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2164185314176567591, guid: ccd64d51c74226a4a925299ddb22fd00, type: 3}
       propertyPath: m_Name
-      value: Enemy
+      value: Placeholder Fella
       objectReference: {fileID: 0}
     - target: {fileID: 5575793591764269486, guid: ccd64d51c74226a4a925299ddb22fd00, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3491,7 +3491,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6149420272344095080, guid: ccd64d51c74226a4a925299ddb22fd00, type: 3}
       propertyPath: Name
-      value: Normal Placeholder Fella
+      value: Placeholder Fella
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -532,6 +532,18 @@ PrefabInstance:
       propertyPath: OverworldHUD
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6809514894822255107, guid: b29933dd38a7b1a4e859770d8103aa6f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6809514894822255107, guid: b29933dd38a7b1a4e859770d8103aa6f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6809514894822255107, guid: b29933dd38a7b1a4e859770d8103aa6f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7120433728482067300, guid: b29933dd38a7b1a4e859770d8103aa6f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.003
