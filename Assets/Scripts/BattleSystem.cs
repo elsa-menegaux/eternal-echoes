@@ -178,8 +178,15 @@ public class BattleSystem : MonoBehaviour
         else if (state == BattleState.LOST)
         {
             DialogueText.text = "You were defeated...";
-			StartCoroutine(TransitionToOverworld());
+			//StartCoroutine(TransitionToOverworld());
+            StartCoroutine(ReturnToMenu());
         }
+    }
+
+    IEnumerator ReturnToMenu()
+    {
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene("GameOver");
     }
 	
 	IEnumerator TransitionToOverworld()
