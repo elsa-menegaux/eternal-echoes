@@ -29,4 +29,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Room 5.unity
     guid: aebae7afef083104da9b7dfefdf9f880
+   - enabled: 1
+    path: Assets/Scenes/OverworldTestScene.unity
+    guid: da974a491a2302f4c8bba4276d47d931
+  - enabled: 1
+    path: Assets/Scenes/EternalEchoesBattleStatsDev.unity
+    guid: e404a1825356770489907f9b93ec2271
   m_configObjects: {}
