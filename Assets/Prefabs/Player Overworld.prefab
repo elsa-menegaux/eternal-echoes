@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 3366132191127050707}
   - component: {fileID: 390918645020735566}
   - component: {fileID: 2710574874149653533}
-  - component: {fileID: 9067516270268433981}
+  - component: {fileID: 7108738113304751218}
   m_Layer: 0
   m_Name: Player Overworld
   m_TagString: Player
@@ -244,7 +244,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.23225904, y: 0.3574617}
   m_EdgeRadius: 0
---- !u!114 &9067516270268433981
+--- !u!114 &7108738113304751218
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -253,7 +253,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 7755867317650920975}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca9c7f1bafa97d649b691b39e20f3a38, type: 3}
+  m_Script: {fileID: 11500000, guid: 9ab311e8799cb61468bd1c4fa993ec05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  body: {fileID: 390918645020735566}
+  playerSpeed: 5
