@@ -31,17 +31,17 @@ public class PlayerManager : MonoBehaviour
         playerStats = GetComponentInChildren<PlayerStats>();
 
         // Automatically find and assign PlayerBattleHUD
-        OverworldHUD = FindObjectOfType<PlayerBattleHUD>();
-        if (OverworldHUD != null)
-        {
-            Debug.Log("OverworldHUD found and assigned.");
-            OverworldHUD.SetHUD(playerStats);
-        }
-        else
-        {
-            Debug.LogError("OverworldHUD not found!");
-        }
-
+        //OverworldHUD = FindObjectOfType<PlayerBattleHUD>();
+        //if (OverworldHUD != null)
+        //{
+        //    Debug.Log("OverworldHUD found and assigned.");
+        //    OverworldHUD.SetHUD(playerStats);
+        //}
+        //else
+        //{
+        //    Debug.LogError("OverworldHUD not found!");
+        //}
+//
         if (playerStats != null)
         {
             Debug.Log("PlayerStats assigned: " + playerStats.Name);

@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class EnemyTrigger : MonoBehaviour
 {
-    public string battleSceneName;  // Name of your battle scene
+    public string battleSceneName  = "BattleScene";  // Name of your battle scene
     private string currentSceneName; // Store the current scene name
 
     private void OnTriggerEnter2D(Collider2D other)

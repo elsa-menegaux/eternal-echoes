@@ -37,12 +37,9 @@ public class LevelSwitch : MonoBehaviour
                         scene = roomScenes.ToArray()[roomNum];
                     }
                 }
-                
-
-                UnityEngine.SceneManagement.SceneManager.LoadScene(scene);
-
+                SceneManager.LoadScene(scene);
             } else{
-                UnityEngine.SceneManagement.SceneManager.LoadScene(sceneBuildIndex);
+                SceneManager.LoadScene(sceneBuildIndex);
             }
             
         }

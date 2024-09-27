@@ -33,7 +33,7 @@ EditorBuildSettings:
     path: Assets/Scenes/OverworldTestScene.unity
     guid: da974a491a2302f4c8bba4276d47d931
   - enabled: 1
-    path: Assets/Scenes/EternalEchoesBattleStatsDev.unity
+    path: Assets/Scenes/BattleScene.unity
     guid: e404a1825356770489907f9b93ec2271
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
