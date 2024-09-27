@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
@@ -36,6 +37,11 @@ public class UIManager : MonoBehaviour
             hud_Object.SetActive(false);
         } else if(!hud_Object.activeSelf) {
             hud_Object.SetActive(true);
+        }
+
+        if (FindObjectOfType<EventSystem>() == null)
+        {
+            GameObject eventSystem = new GameObject("EventSystem", typeof(EventSystem), typeof(StandaloneInputModule));
         }
     }
 
