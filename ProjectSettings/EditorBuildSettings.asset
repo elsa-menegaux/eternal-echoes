@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: d7247e17a6f1f1d45b7dba6e2e823df1
   - enabled: 1
-    path: Assets/Scenes/PauseMenuTest.unity
+    path: Assets/Scenes/Development/PauseMenuTest.unity
     guid: a80f08cd14e094c4e950658b2289904b
   - enabled: 1
     path: Assets/Scenes/Lobby.unity
@@ -30,7 +30,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Room 5.unity
     guid: aebae7afef083104da9b7dfefdf9f880
   - enabled: 1
-    path: Assets/Scenes/OverworldTestScene.unity
+    path: Assets/Scenes/Development/OverworldTestScene.unity
     guid: da974a491a2302f4c8bba4276d47d931
   - enabled: 1
     path: Assets/Scenes/BattleScene.unity
