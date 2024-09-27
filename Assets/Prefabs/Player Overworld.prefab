@@ -160,7 +160,7 @@ MonoBehaviour:
   startingReflexes: 5
   startingTechnical: 5
   maxHealth: 20
-  currentHealth: 10
+  currentHealth: 20
   currentDamage: 20
   currentAbilityDamage: 10
   currentCritChance: 7.5

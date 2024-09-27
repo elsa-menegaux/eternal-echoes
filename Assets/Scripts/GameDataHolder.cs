@@ -47,7 +47,7 @@ public class GameDataHolder : MonoBehaviour
 	private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
 	{
 		// Check if the current scene is the overworld
-		if (scene.name == "EternalEchoesBattleStatsDev") // replace with actual scene name
+		if (scene.name == "BattleScene") // replace with actual scene name
 		{
 			enemyStats = FindObjectOfType<EnemyStats>();
 			if (enemyStats != null)
@@ -56,7 +56,7 @@ public class GameDataHolder : MonoBehaviour
 			}
 			else
 			{
-				Debug.LogError("EternalEchoesBattleStatsDev not found after scene load!");
+				Debug.LogError("BattleScene not found after scene load!");
 			}
 		}
 	}
