@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class EnemyTrigger : MonoBehaviour
 {
-    private string battleSceneName  = "BattleScene";  // Name of your battle scene
+    private string battleSceneName = "BattleScene";  // Name of your battle scene
     private string currentSceneName; // Store the current scene name
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -26,15 +26,18 @@ public class EnemyTrigger : MonoBehaviour
         // Make the player object invisible
         other.gameObject.SetActive(false);
 		
-        // Get the EnemyState component
+        // Get the EnemyStats component
         EnemyStats enemyStats = GetComponent<EnemyStats>();
-        Debug.Log("EnemyStats found on " + gameObject.name);
-        
         if (enemyStats != null)
         {
-            GameDataHolder.Instance.enemyStats = enemyStats;
-            Debug.Log("EnemyStats assigned from " + gameObject.name + " to GameDataHolder");
-			GameDataHolder.Instance.enemyname = gameObject.name;
+            GameData.EnemyStats = enemyStats; // Assign the enemy stats
+            GameData.EnemyName = gameObject.name; // Store the enemy name
+            Debug.Log("EnemyStats assigned from " + gameObject.name + " to GameData");
+        }
+        else
+        {
+            Debug.LogError("EnemyStats component not found on " + gameObject.name);
+            return; // Exit if enemyStats is not found
         }
     
         EnemyState enemyState = GetComponent<EnemyState>();
@@ -48,7 +51,7 @@ public class EnemyTrigger : MonoBehaviour
             gameObject.SetActive(false);
         }
 		
-		GameDataHolder.Instance.previousSceneName = currentSceneName; 
+        GameData.PreviousSceneName = currentSceneName; 
 		
         // Load the battle scene
         SceneManager.LoadScene(battleSceneName);

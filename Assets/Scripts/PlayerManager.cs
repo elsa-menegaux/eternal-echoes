@@ -80,7 +80,7 @@ public class PlayerManager : MonoBehaviour
 		//	}
 		//}
 
-        if (scene.name != GameDataHolder.Instance.previousSceneName && scene.name != "BattleScene")
+        if (scene.name != GameData.PreviousSceneName && scene.name != "BattleScene")
         {
             //New Room is detected
             playerObject.transform.position = GameObject.Find("PlayerStartPosition").transform.position;

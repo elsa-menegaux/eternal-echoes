@@ -6324,8 +6324,6 @@ GameObject:
   m_Component:
   - component: {fileID: 926830460}
   - component: {fileID: 926830459}
-  - component: {fileID: 926830461}
-  - component: {fileID: 926830462}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -6360,51 +6358,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &926830461
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 926830458}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4fd74a7cd852ce409732c7809749a8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyStats: {fileID: 0}
-  previousSceneName: 
-  enemyname: 
---- !u!114 &926830462
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 926830458}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d44ce184b02f504099bb2037a992db4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startingStrength: 5
-  startingEndurance: 5
-  startingIntelligence: 5
-  startingReflexes: 5
-  startingTechnical: 5
-  maxHealth: 0
-  currentHealth: 0
-  currentDamage: 0
-  currentAbilityDamage: 0
-  currentCritChance: 0
-  currentCritDamage: 0
-  currentDodgeRate: 0
-  overrideStats: 0
-  overrideCalculatedHealth: 0
-  Name: Placeholder Fella
-  Level: 1
-  damageModifier: 0.2
-  Reward: 10
 --- !u!1 &946547169
 GameObject:
   m_ObjectHideFlags: 0
@@ -9222,6 +9175,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1400782421}
   m_CullTransparentMesh: 1
+--- !u!114 &1416218261 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4758407438986673267, guid: 65faa96264156914099a74a06531ae25, type: 3}
+  m_PrefabInstance: {fileID: 1835818402}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d44ce184b02f504099bb2037a992db4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1438596141
 GameObject:
   m_ObjectHideFlags: 0
@@ -11780,17 +11744,45 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1001531931624427991, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: m_Size.x
+      value: 0.39354658
+      objectReference: {fileID: 0}
+    - target: {fileID: 1001531931624427991, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: m_Size.y
+      value: 0.34480637
+      objectReference: {fileID: 0}
+    - target: {fileID: 1001531931624427991, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.0116227865
+      objectReference: {fileID: 0}
+    - target: {fileID: 1001531931624427991, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.22436747
+      objectReference: {fileID: 0}
+    - target: {fileID: 2101045087297711770, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: enemyStats
+      value: 
+      objectReference: {fileID: 1416218261}
+    - target: {fileID: 2327758066971789626, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ed4a0ec87f3e75b42b771e3bce98e659, type: 3}
     - target: {fileID: 3630588172611822636, guid: 65faa96264156914099a74a06531ae25, type: 3}
       propertyPath: m_Name
-      value: Computer Virus (1)
+      value: Placeholder Fella
+      objectReference: {fileID: 0}
+    - target: {fileID: 4270090142455065742, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: m_Name
+      value: Placeholder Fella Sprite
       objectReference: {fileID: 0}
     - target: {fileID: 4565920152118321486, guid: 65faa96264156914099a74a06531ae25, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.14
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4565920152118321486, guid: 65faa96264156914099a74a06531ae25, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.38
+      value: 0.24
       objectReference: {fileID: 0}
     - target: {fileID: 4565920152118321486, guid: 65faa96264156914099a74a06531ae25, type: 3}
       propertyPath: m_LocalPosition.z
@@ -11823,6 +11815,26 @@ PrefabInstance:
     - target: {fileID: 4565920152118321486, guid: 65faa96264156914099a74a06531ae25, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758407438986673267, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: Name
+      value: Placeholder Fella
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758407438986673267, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: maxHealth
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758407438986673267, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: currentDamage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758407438986673267, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: currentHealth
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758407438986673267, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: damageModifier
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11995,6 +12007,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5480215009514469588, guid: b29933dd38a7b1a4e859770d8103aa6f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 5480215009514469588, guid: b29933dd38a7b1a4e859770d8103aa6f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.14
+      objectReference: {fileID: 0}
     - target: {fileID: 6809514894822255107, guid: b29933dd38a7b1a4e859770d8103aa6f, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.08
@@ -12057,6 +12077,22 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: f1e25ba64ac64ed4b8d6eafd8da46b04, type: 3}
     - target: {fileID: 7596213756340138533, guid: b29933dd38a7b1a4e859770d8103aa6f, type: 3}
       propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8182037231449462573, guid: b29933dd38a7b1a4e859770d8103aa6f, type: 3}
+      propertyPath: currentDamage
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8182037231449462573, guid: b29933dd38a7b1a4e859770d8103aa6f, type: 3}
+      propertyPath: overrideStats
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8182037231449462573, guid: b29933dd38a7b1a4e859770d8103aa6f, type: 3}
+      propertyPath: damageModifier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8182037231449462573, guid: b29933dd38a7b1a4e859770d8103aa6f, type: 3}
+      propertyPath: overrideCalculatedHealth
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8231924251037045112, guid: b29933dd38a7b1a4e859770d8103aa6f, type: 3}
@@ -13298,55 +13334,67 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2101045087297711770, guid: 43f6c388a41ab164ca40adb8f0bf9710, type: 3}
-      propertyPath: battleSceneName
-      value: BattleScene
+    - target: {fileID: 1001531931624427991, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: m_Size.x
+      value: 0.36204207
       objectReference: {fileID: 0}
-    - target: {fileID: 3630588172611822636, guid: 43f6c388a41ab164ca40adb8f0bf9710, type: 3}
+    - target: {fileID: 1001531931624427991, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: m_Size.y
+      value: 0.32905412
+      objectReference: {fileID: 0}
+    - target: {fileID: 1001531931624427991, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.035633743
+      objectReference: {fileID: 0}
+    - target: {fileID: 1001531931624427991, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.2164917
+      objectReference: {fileID: 0}
+    - target: {fileID: 3630588172611822636, guid: 65faa96264156914099a74a06531ae25, type: 3}
       propertyPath: m_Name
       value: Computer Virus
       objectReference: {fileID: 0}
-    - target: {fileID: 4270090142455065742, guid: 43f6c388a41ab164ca40adb8f0bf9710, type: 3}
+    - target: {fileID: 4270090142455065742, guid: 65faa96264156914099a74a06531ae25, type: 3}
       propertyPath: m_Name
-      value: Computer Virus
+      value: Computer Virus Sprite
       objectReference: {fileID: 0}
-    - target: {fileID: 4565920152118321486, guid: 43f6c388a41ab164ca40adb8f0bf9710, type: 3}
+    - target: {fileID: 4565920152118321486, guid: 65faa96264156914099a74a06531ae25, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.5151938
       objectReference: {fileID: 0}
-    - target: {fileID: 4565920152118321486, guid: 43f6c388a41ab164ca40adb8f0bf9710, type: 3}
+    - target: {fileID: 4565920152118321486, guid: 65faa96264156914099a74a06531ae25, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.7428095
       objectReference: {fileID: 0}
-    - target: {fileID: 4565920152118321486, guid: 43f6c388a41ab164ca40adb8f0bf9710, type: 3}
+    - target: {fileID: 4565920152118321486, guid: 65faa96264156914099a74a06531ae25, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4565920152118321486, guid: 43f6c388a41ab164ca40adb8f0bf9710, type: 3}
+    - target: {fileID: 4565920152118321486, guid: 65faa96264156914099a74a06531ae25, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4565920152118321486, guid: 43f6c388a41ab164ca40adb8f0bf9710, type: 3}
+    - target: {fileID: 4565920152118321486, guid: 65faa96264156914099a74a06531ae25, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4565920152118321486, guid: 43f6c388a41ab164ca40adb8f0bf9710, type: 3}
+    - target: {fileID: 4565920152118321486, guid: 65faa96264156914099a74a06531ae25, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4565920152118321486, guid: 43f6c388a41ab164ca40adb8f0bf9710, type: 3}
+    - target: {fileID: 4565920152118321486, guid: 65faa96264156914099a74a06531ae25, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4565920152118321486, guid: 43f6c388a41ab164ca40adb8f0bf9710, type: 3}
+    - target: {fileID: 4565920152118321486, guid: 65faa96264156914099a74a06531ae25, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4565920152118321486, guid: 43f6c388a41ab164ca40adb8f0bf9710, type: 3}
+    - target: {fileID: 4565920152118321486, guid: 65faa96264156914099a74a06531ae25, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4565920152118321486, guid: 43f6c388a41ab164ca40adb8f0bf9710, type: 3}
+    - target: {fileID: 4565920152118321486, guid: 65faa96264156914099a74a06531ae25, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
@@ -13354,7 +13402,7 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 43f6c388a41ab164ca40adb8f0bf9710, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 65faa96264156914099a74a06531ae25, type: 3}
 --- !u!1 &1992916914
 GameObject:
   m_ObjectHideFlags: 0

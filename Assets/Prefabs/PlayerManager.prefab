@@ -95,6 +95,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2710574874149653533, guid: 517532aff959c7e4bae42cc44ee14b97, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3366132191127050707, guid: 517532aff959c7e4bae42cc44ee14b97, type: 3}
+      propertyPath: currentDamage
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3366132191127050707, guid: 517532aff959c7e4bae42cc44ee14b97, type: 3}
+      propertyPath: damageModifier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3366132191127050707, guid: 517532aff959c7e4bae42cc44ee14b97, type: 3}
+      propertyPath: currentAbilityDamage
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7755867317650920975, guid: 517532aff959c7e4bae42cc44ee14b97, type: 3}
       propertyPath: m_Name
       value: Player Overworld

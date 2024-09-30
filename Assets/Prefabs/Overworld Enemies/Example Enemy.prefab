@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1806597845512044525}
   - component: {fileID: 999280017609522788}
   m_Layer: 0
-  m_Name: Computer Virus
+  m_Name: Example Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 3630588172611822636}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.536, y: 1.739, z: 0}
+  m_LocalPosition: {x: -1.5151938, y: 1.7428095, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -54,10 +54,10 @@ MonoBehaviour:
   startingIntelligence: 5
   startingReflexes: 5
   startingTechnical: 5
-  maxHealth: 30
-  currentHealth: 30
-  currentDamage: 10
-  currentAbilityDamage: 10
+  maxHealth: 20
+  currentHealth: 20
+  currentDamage: 3
+  currentAbilityDamage: 3
   currentCritChance: 7.5
   currentCritDamage: 2
   currentDodgeRate: 7.5
@@ -65,7 +65,7 @@ MonoBehaviour:
   overrideCalculatedHealth: 1
   Name: Computer Virus
   Level: 1
-  damageModifier: 0.1
+  damageModifier: 1
   Reward: 10
 --- !u!114 &2101045087297711770
 MonoBehaviour:
@@ -79,7 +79,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dfa6e7219c612a4c95309ddb4148a76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  battleSceneName: EternalEchoesBattleStatsDev
 --- !u!61 &1001531931624427991
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -176,7 +175,7 @@ GameObject:
   - component: {fileID: 2327758066971789626}
   - component: {fileID: 3631936886797488500}
   m_Layer: 0
-  m_Name: Placeholder Fella96
+  m_Name: Example Enemy Sprite
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

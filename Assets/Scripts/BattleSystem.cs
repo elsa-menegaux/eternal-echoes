@@ -8,8 +8,8 @@ public enum BattleState { START, PLAYERTURN, PLAYERATTACKED, PLAYERHEALED, ENEMY
 
 public class BattleSystem : MonoBehaviour
 {
+	public EnemySpriteDatabase enemySpriteDatabase; // Reference to your Sprite Database
     public GameObject playerPrefab;
-    //public GameObject enemyPrefab;
 	public GameObject enemyPrefab;
 
     public Transform playerBattleStation;
@@ -37,6 +37,7 @@ public class BattleSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+		Debug.Log("EnemyStats in Battle Scene: " + GameData.EnemyStats?.Name);
         state = BattleState.START;
 		
         StartCoroutine(SetupBattle());
@@ -46,78 +47,105 @@ public class BattleSystem : MonoBehaviour
     }
 
     IEnumerator SetupBattle()
-{
-    // Instantiate player prefab and set up player stats
-    GameObject playerGO = Instantiate(playerPrefab, playerBattleStation);
-    playerUnit = playerGO.GetComponent<PlayerStats>();
+	{
+		// Set up player from PlayerManager
+        GameObject playerGO = Instantiate(playerPrefab, playerBattleStation);
+        playerUnit = playerGO.GetComponent<PlayerStats>();
+        SetPlayerStatsFromManager();
 
-    // Use the player's stats stored in GameData
-    if (PlayerManager.Instance.playerStats != null)
-    {
-        // Retrieve player stats from GameDataHolder
-        playerUnit.Name = PlayerManager.Instance.playerStats.Name;
-        playerUnit.Level = PlayerManager.Instance.playerStats.Level;
-        playerUnit.maxHealth = PlayerManager.Instance.playerStats.maxHealth;
-        playerUnit.currentHealth = PlayerManager.Instance.playerStats.currentHealth;
-        playerUnit.currentDamage = PlayerManager.Instance.playerStats.currentDamage;
-        playerUnit.currentAbilityDamage = PlayerManager.Instance.playerStats.currentAbilityDamage;
-        playerUnit.currentCritChance = PlayerManager.Instance.playerStats.currentCritChance;
-        playerUnit.currentCritDamage = PlayerManager.Instance.playerStats.currentCritDamage;
-        playerUnit.currentDodgeRate = PlayerManager.Instance.playerStats.currentDodgeRate;
-        playerUnit.Money = PlayerManager.Instance.playerStats.Money;
+        playerHUD.SetHUD(playerUnit);
 
-        playerHUD.SetHUD(playerUnit); // Set up the player HUD
+		
+		Debug.Log("Battle initiated with: " + GameData.EnemyStats.Name);
+        GameObject enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
+		enemyGO.transform.localPosition = new Vector3(0,0.3f,0); // Center the enemy in the battle station
+		enemyGO.transform.localRotation = Quaternion.identity; // Reset rotation
+		enemyGO.transform.localScale = Vector3.one; // Reset scale if necessary
+        enemyUnit = enemyGO.GetComponent<EnemyStats>();
+		// Fetch the enemy from GameDataHolder and set up
+		Debug.Log("Null Check name: " + GameData.EnemyStats.Name);
+		Debug.Log("Null Check reward: " + GameData.EnemyStats.Reward);
+		Debug.Log("Null Check level: " + GameData.EnemyStats.Level);
+        SetEnemyStatsFromGameData();
 
-        // Load the appropriate enemy prefab based on the enemy's name from the Resources folder
-        if (GameDataHolder.Instance.enemyStats != null)
+        // Set enemy sprite based on enemy name
+		string enemyName = GameData.EnemyStats.Name; // Get the enemy's name
+		EnemySpriteDatabase.EnemyData enemyData = enemySpriteDatabase.GetEnemyDataByName(enemyName); // Get the enemy data
+        //Sprite enemySprite = enemySpriteDatabase.GetSpriteByName(enemyName); // Get the sprite
+
+        if (enemyData != null)
         {
-            string enemyPrefabPath = "BattleEnemies/" + GameDataHolder.Instance.enemyname; // Assuming your enemy prefabs are in Resources/Enemies folder
-            GameObject enemyPrefab = Resources.Load<GameObject>(enemyPrefabPath);
-			Debug.Log("Enemy prefab found in Resources folder for: " + enemyPrefabPath);
-
-            if (enemyPrefab != null)
+            // Assign the sprite to your enemy GameObject
+            enemyGO.GetComponent<SpriteRenderer>().sprite = enemyData.sprite;
+			
+			if (enemyData.animatorController != null)
             {
-                GameObject enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
-                enemyUnit = enemyGO.GetComponent<EnemyStats>();
-
-                // Set enemy stats
-                enemyUnit.Name = GameDataHolder.Instance.enemyStats.Name;
-                enemyUnit.Level = GameDataHolder.Instance.enemyStats.Level;
-                enemyUnit.maxHealth = GameDataHolder.Instance.enemyStats.maxHealth;
-                enemyUnit.currentHealth = GameDataHolder.Instance.enemyStats.currentHealth;
-                enemyUnit.currentDamage = GameDataHolder.Instance.enemyStats.currentDamage;
-                enemyUnit.currentAbilityDamage = GameDataHolder.Instance.enemyStats.currentAbilityDamage;
-                enemyUnit.currentCritChance = GameDataHolder.Instance.enemyStats.currentCritChance;
-                enemyUnit.currentCritDamage = GameDataHolder.Instance.enemyStats.currentCritDamage;
-                enemyUnit.currentDodgeRate = GameDataHolder.Instance.enemyStats.currentDodgeRate;
-                enemyUnit.damageModifier = GameDataHolder.Instance.enemyStats.damageModifier;
-
-                enemyHUD.SetHUD(enemyUnit); // Set up the enemy HUD
-
-                DialogueText.text = "A " + enemyUnit.Name + " has appeared!";
+                enemyGO.GetComponent<Animator>().runtimeAnimatorController = enemyData.animatorController;
             }
-            else
+			else
             {
-                Debug.LogError("Enemy prefab not found in Resources folder for: " + GameDataHolder.Instance.enemyStats.Name);
+                // Optionally, handle cases where no animation is needed
+                Debug.Log("No animator controller found for enemy: " + enemyName);
             }
         }
         else
         {
-			Debug.LogError("GameDataHolder.enemyStats is null!");
-		}
+            Debug.LogError("Enemy Data not found for enemy: " + enemyName);
+        }
+
+        enemyHUD.SetHUD(enemyUnit);
+        DialogueText.text = "A shady looking " + enemyUnit.Name + " has snuck up...";
+
+        //Debug.LogError("Enemy stats not found in GameDataHolder!");
+
+		yield return new WaitForSeconds(2f);
 	
-		DialogueText.text = "A shady looking " + enemyUnit.Name + " has snuck up...";
-	}
-	else
-	{
-		Debug.LogError("PlayerManager.Instance.playerStats is null!");
+		state = BattleState.PLAYERTURN;
+		PlayerTurn();
 	}
 	
-	yield return new WaitForSeconds(2f);
-	
-	state = BattleState.PLAYERTURN;
-	PlayerTurn();
-	}
+	void SetPlayerStatsFromManager()
+    {
+        if (PlayerManager.Instance.playerStats != null)
+        {
+            playerUnit.Name = PlayerManager.Instance.playerStats.Name;
+            playerUnit.Level = PlayerManager.Instance.playerStats.Level;
+            playerUnit.maxHealth = PlayerManager.Instance.playerStats.maxHealth;
+            playerUnit.currentHealth = PlayerManager.Instance.playerStats.currentHealth;
+            playerUnit.currentDamage = PlayerManager.Instance.playerStats.currentDamage;
+            playerUnit.currentAbilityDamage = PlayerManager.Instance.playerStats.currentAbilityDamage;
+            playerUnit.currentCritChance = PlayerManager.Instance.playerStats.currentCritChance;
+            playerUnit.currentCritDamage = PlayerManager.Instance.playerStats.currentCritDamage;
+            playerUnit.currentDodgeRate = PlayerManager.Instance.playerStats.currentDodgeRate;
+            playerUnit.Money = PlayerManager.Instance.playerStats.Money;
+        }
+    }
+
+    void SetEnemyStatsFromGameData()
+    {
+        enemyUnit.Name = GameData.EnemyStats.Name;
+		Debug.Log("GameData.Name: " + GameData.EnemyStats.Name);
+		Debug.Log("enemyUnit.Name: " + enemyUnit.Name);
+        enemyUnit.Level = GameData.EnemyStats.Level;
+		Debug.Log("GameData.Level: " + GameData.EnemyStats.Level);
+		Debug.Log("enemyUnit.Level: " + enemyUnit.Level);
+        enemyUnit.maxHealth = GameData.EnemyStats.maxHealth;
+		Debug.Log("GameData.maxHealth: " + GameData.EnemyStats.maxHealth);
+		Debug.Log("enemyUnit.maxHealth: " + enemyUnit.maxHealth);
+        enemyUnit.currentHealth = GameData.EnemyStats.currentHealth;
+		Debug.Log("GameData.currentHealth: " + GameData.EnemyStats.currentHealth);
+		Debug.Log("enemyUnit.currentHealth: " + enemyUnit.currentHealth);
+        enemyUnit.currentDamage = GameData.EnemyStats.currentDamage;
+		Debug.Log("GameData.currentDamage: " + GameData.EnemyStats.currentDamage);
+		Debug.Log("enemyUnit.currentDamage: " + enemyUnit.currentDamage);
+        enemyUnit.currentAbilityDamage = GameData.EnemyStats.currentAbilityDamage;
+		Debug.Log("GameData.currentAbilityDamage: " + GameData.EnemyStats.currentAbilityDamage);
+		Debug.Log("enemyUnit.currentAbilityDamage: " + enemyUnit.currentAbilityDamage);
+        enemyUnit.currentCritChance = GameData.EnemyStats.currentCritChance;
+        enemyUnit.currentCritDamage = GameData.EnemyStats.currentCritDamage;
+        enemyUnit.currentDodgeRate = GameData.EnemyStats.currentDodgeRate;
+        enemyUnit.damageModifier = GameData.EnemyStats.damageModifier;
+    }
 	
 
     IEnumerator PlayerAttack()
@@ -241,7 +269,7 @@ public class BattleSystem : MonoBehaviour
         {
             Debug.LogError("PlayerManager instance not found!");
         }
-		string previousSceneName = GameDataHolder.Instance.previousSceneName; // Ensure to store this in GameDataHolder
+		string previousSceneName = GameData.PreviousSceneName; // Ensure to store this in GameDataHolder
 		SceneManager.LoadScene(previousSceneName, LoadSceneMode.Single);
 		
 		PlayerManager.Instance.transform.GetChild(0).gameObject.SetActive(true);

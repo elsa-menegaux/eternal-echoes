@@ -1866,8 +1866,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8cfad05f7e0d2a44b67ce4db46b87e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemySpriteDatabase: {fileID: 11400000, guid: 5bc6a640396a1254996c80524095b532, type: 2}
   playerPrefab: {fileID: 8793234464545662209, guid: 9bf0e054ddfb7e04fb323330231f4a05, type: 3}
-  enemyPrefab: {fileID: 0}
+  enemyPrefab: {fileID: 611297465415253926, guid: ab1be010322e4f84a9ca7fb6b65daaef, type: 3}
   playerBattleStation: {fileID: 361078379}
   enemyBattleStation: {fileID: 1402399508}
   attackButton: {fileID: 963309149}
