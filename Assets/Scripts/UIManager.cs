@@ -26,7 +26,7 @@ public class UIManager : MonoBehaviour
         }
 
         canvas = GetComponent<Canvas>();
-        canvas.worldCamera = FindFirstObjectByType<Camera>();
+        canvas.worldCamera = FindObjectOfType<Camera>();
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -43,6 +43,7 @@ public class UIManager : MonoBehaviour
         {
             GameObject eventSystem = new GameObject("EventSystem", typeof(EventSystem), typeof(StandaloneInputModule));
         }
+        canvas.worldCamera = FindObjectOfType<Camera>();
     }
 
     private void OnEnable()
