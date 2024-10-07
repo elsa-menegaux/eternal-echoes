@@ -13,11 +13,21 @@ public class DataPersistenceManagerEditorHelper : Editor
         DataPersistenceManager manager = target.GetComponent<DataPersistenceManager>();
 
         if( GUILayout.Button("Save Data")) {
+            manager.InitDataHandler();
+            manager.CollectDataObjectsFromScene();
             manager.SaveGame();
         }
 
         if(GUILayout.Button("Load Data")) {
+            manager.InitDataHandler();
+            manager.CollectDataObjectsFromScene();
             manager.LoadGame();
+        }
+
+        if(GUILayout.Button("New Save")) {
+            manager.InitDataHandler();
+            manager.CollectDataObjectsFromScene();
+            manager.NewGame();
         }
     }
   

@@ -7,9 +7,15 @@ using UnityEngine;
 
 public class DataPersistenceManager : MonoBehaviour
 {
+    [Header("File Storage Config")]
+    [SerializeField] private string fileName = "save.json";
+    
+
+    [SerializeField]
     private PersistentGameData persistentGameData;
 
     private List<IDataPersistence> dataPersistenceObjects;
+    private FileDataHandler dataHandler;
 
     public static DataPersistenceManager instance { get; private set; }
 
@@ -25,9 +31,19 @@ public class DataPersistenceManager : MonoBehaviour
 
     private void Start()
     {
-        this.dataPersistenceObjects = FindAllDataPersistenceObjects();
+        InitDataHandler();
+        CollectDataObjectsFromScene();
     }
 
+    public void InitDataHandler()
+    {
+        this.dataHandler = new FileDataHandler(Application.persistentDataPath, fileName);
+    }
+    
+    public void CollectDataObjectsFromScene()
+    {
+        this.dataPersistenceObjects = FindAllDataPersistenceObjects();
+    }
 
     public void NewGame() 
     {
@@ -36,7 +52,9 @@ public class DataPersistenceManager : MonoBehaviour
 
     public void LoadGame()
     {
-        //TODO load any saved data from fileHandler
+        // load any saved data from fileHandler
+        this.persistentGameData = dataHandler.Load();
+
         //if no data can be loaded create a new game
         if (this.persistentGameData == null)
         {
@@ -52,15 +70,21 @@ public class DataPersistenceManager : MonoBehaviour
 
     public void SaveGame()
     {
-        //TODO pass the data to other scripts so they can update it 
+        // pass the data to other scripts so they can save the needed data to persistentGameData 
+        foreach(IDataPersistence dataPersistenceObj in dataPersistenceObjects)
+        {
+            dataPersistenceObj.SaveData(ref persistentGameData);
+        }
 
-        //TODO pass data to filehandler to save
+        //pass data to filehandler to save
+        dataHandler.Save(persistentGameData);
     }
 
 
     
     private List<IDataPersistence> FindAllDataPersistenceObjects()
     {
+        //find all scripts implementing IDataPersistence in the scene
         IEnumerable<IDataPersistence> dataPersistenceObjects = FindObjectsOfType<MonoBehaviour>()
             .OfType<IDataPersistence>();
         
