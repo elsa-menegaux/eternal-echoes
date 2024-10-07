@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayerManager : MonoBehaviour
+public class PlayerManager : MonoBehaviour, IDataPersistence
 {
     public static PlayerManager Instance;
 
@@ -93,5 +93,18 @@ public class PlayerManager : MonoBehaviour
         //{
         //    OverworldHUD.SetHP(playerStats.currentHealth);
         //}
+    }
+
+    public void LoadData(PersistentGameData persistentGameData)
+    {
+        if (!persistentGameData.playerPosition.Equals(Vector3.negativeInfinity))
+        {
+            playerObject.transform.position = persistentGameData.playerPosition;
+        }
+    }
+
+    public void SaveData(ref PersistentGameData persistentGameData)
+    {
+        persistentGameData.playerPosition = playerObject.transform.position;
     }
 }
