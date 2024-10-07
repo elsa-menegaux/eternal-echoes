@@ -83,7 +83,12 @@ public class PlayerManager : MonoBehaviour, IDataPersistence
         if (scene.name != GameData.PreviousSceneName && scene.name != "BattleScene")
         {
             //New Room is detected
-            playerObject.transform.position = GameObject.Find("PlayerStartPosition").transform.position;
+            GameObject playerStart = GameObject.Find("PlayerStartPosition");
+            if (playerStart != null)
+            {
+                playerObject.transform.position = playerStart.transform.position;
+            }
+            
         }
 	}
 

@@ -4,13 +4,21 @@ using UnityEngine;
 
 public class EnemyState : MonoBehaviour
 {
+    [SerializeField] private string id;
+    [ContextMenu("Create GUID for ID")]
+    private void generateGuid()
+    {
+        id = System.Guid.NewGuid().ToString();
+    }
+
+
     private void Awake()
     {
         // Ensure GameManager is initialized before accessing it
         if (GameManager.instance != null)
         {
             // Check if this enemy has been fought
-            if (GameManager.instance.enemyStatus.ContainsKey(gameObject.name) && GameManager.instance.enemyStatus[gameObject.name])
+            if (GameManager.instance.enemyStatus.ContainsKey(id) && GameManager.instance.enemyStatus[id])
             {
                 gameObject.SetActive(false); // Deactivate if already fought
             }
@@ -25,7 +33,7 @@ public class EnemyState : MonoBehaviour
     {
         if (GameManager.instance != null)
         {
-            GameManager.instance.enemyStatus[gameObject.name] = true; // Track enemy status
+            GameManager.instance.enemyStatus[id] = true; // Track enemy status
             gameObject.SetActive(false); // Deactivate the enemy
         }
         else

@@ -15,7 +15,7 @@ public class PersistentGameData
     public PersistentGameData()
     {
         //Vector3.negativeInfinity will represent Undefined.
-        playerPosition = Vector3.one;
+        playerPosition = Vector3.negativeInfinity;
     }
 
 }
