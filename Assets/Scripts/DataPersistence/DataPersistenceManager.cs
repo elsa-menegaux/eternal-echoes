@@ -21,12 +21,18 @@ public class DataPersistenceManager : MonoBehaviour
 
     private void Awake()
     {
-        if (instance != null)
+        // Ensure there's only one instance of DataPersistenceManager
+        if (instance == null)
         {
-            Debug.LogError("Found more than one DataPersistenceManager in the scene.\n Destroying script on " + gameObject.name);
-            Destroy(this);
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+            Debug.Log("DataPersistenceManager instantiated.");
         }
-        instance = this;
+        else
+        {
+            Debug.LogWarning("Found more than one DataPersistenceManager in the scene.\n Destroying script on " + gameObject.name);
+            Destroy(gameObject); // Destroy duplicates
+        }
     }
 
     private void Start()

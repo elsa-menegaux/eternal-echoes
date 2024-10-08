@@ -102,14 +102,28 @@ public class PlayerManager : MonoBehaviour, IDataPersistence
 
     public void LoadData(PersistentGameData persistentGameData)
     {
+        //load needed scene first
+        if (SceneManager.GetActiveScene().name != persistentGameData.playerScene)
+        {
+            SceneManager.LoadScene(persistentGameData.playerScene);
+        }
+
+
+        //Load Player position only if not Negative Infinity
         if (!persistentGameData.playerPosition.Equals(Vector3.negativeInfinity))
         {
             playerObject.transform.position = persistentGameData.playerPosition;
         }
+
+        
     }
 
     public void SaveData(ref PersistentGameData persistentGameData)
     {
+        //Save player position
         persistentGameData.playerPosition = playerObject.transform.position;
+
+        //Save Current Scene Name// or build index
+        persistentGameData.playerScene = SceneManager.GetActiveScene().name;
     }
 }
