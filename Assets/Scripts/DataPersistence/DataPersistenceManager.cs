@@ -11,7 +11,7 @@ public class DataPersistenceManager : MonoBehaviour
     [SerializeField] private string fileName = "save.json";
     
 
-    [SerializeField]
+   
     private PersistentGameData persistentGameData;
 
     private List<IDataPersistence> dataPersistenceObjects;
