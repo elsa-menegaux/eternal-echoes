@@ -1,14 +1,24 @@
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
+[System.Serializable]
 public class SerializableDictionary<TKey, TValue> : Dictionary<TKey, TValue>, ISerializationCallbackReceiver
 {
     [SerializeField] private List<TKey> keys = new List<TKey>();
     [SerializeField] private List<TValue> values = new List<TValue>();
 
+    // Constructor that accepts a Dictionary
+    public SerializableDictionary(Dictionary<TKey, TValue> dictionary) : base(dictionary)
+    {
+        foreach (var pair in dictionary)
+        {
+            keys.Add(pair.Key);
+            values.Add(pair.Value);
+        }
+    }
 
+    public SerializableDictionary() {}
+    
     // save the dictionary to lists
     public void OnBeforeSerialize()
     {
@@ -20,7 +30,6 @@ public class SerializableDictionary<TKey, TValue> : Dictionary<TKey, TValue>, IS
             values.Add(pair.Value);
         }
     }
-
 
     //load the dictionary from lists
     public void OnAfterDeserialize()
