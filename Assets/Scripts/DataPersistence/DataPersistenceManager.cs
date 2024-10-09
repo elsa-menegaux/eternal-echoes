@@ -10,8 +10,6 @@ public class DataPersistenceManager : MonoBehaviour
     [Header("File Storage Config")]
     [SerializeField] private string fileName = "save.json";
     
-
-   
     private PersistentGameData persistentGameData;
 
     private List<IDataPersistence> dataPersistenceObjects;
@@ -76,6 +74,13 @@ public class DataPersistenceManager : MonoBehaviour
 
     public void SaveGame()
     {
+        //if no data, Init the variables b4 saving
+        if (this.persistentGameData == null)
+        {
+            Debug.Log("No data was found. Initializing to defaults.");
+            NewGame();
+        }
+
         // pass the data to other scripts so they can save the needed data to persistentGameData 
         foreach(IDataPersistence dataPersistenceObj in dataPersistenceObjects)
         {

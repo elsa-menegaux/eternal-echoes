@@ -8,6 +8,8 @@ using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
+    DataPersistenceManager dataPersistenceManager;
+
     public void QuitGame()
     {
         Application.Quit();
@@ -16,6 +18,22 @@ public class PauseMenu : MonoBehaviour
     public void LoadMainMenu()
     {
         SceneManager.LoadScene(0);
+    }
+
+    public void SaveButton()
+    {
+        if (dataPersistenceManager == null)
+        {
+            dataPersistenceManager = FindObjectOfType<DataPersistenceManager>();
+            if (dataPersistenceManager == null)
+            {
+                Debug.LogError("Cannot Find DataPersistenceManager to Save to");
+                return;
+            }
+        }
+
+        dataPersistenceManager.SaveGame();
+
     }
 
 }
