@@ -2,11 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class GameManager : MonoBehaviour, IDataPersistence
 {
     public static GameManager instance;
 	
     public Dictionary<string, bool> enemyStatus = new Dictionary<string, bool>();
+
+    public void LoadData(PersistentGameData persistentGameData)
+    {
+        enemyStatus = persistentGameData.enemyStatus;
+    }
+
+    public void SaveData(ref PersistentGameData persistentGameData)
+    {
+        persistentGameData.enemyStatus = new SerializableDictionary<string, bool>(enemyStatus);
+    }
 
     private void Awake()
     {
