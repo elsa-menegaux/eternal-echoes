@@ -11,6 +11,8 @@ public class LevelSwitch : MonoBehaviour
 
     public bool randomIndex = true;
     public bool banSameRoom = true;
+
+    // List of available rooms
     public List<string> roomScenes = new List<string>{"Room 1","Room 2","Room 3","Room 4","Room 5"};
     
     // If Exit zone is entered and collider is a player
@@ -27,6 +29,7 @@ public class LevelSwitch : MonoBehaviour
             Debug.Log("Player detected");
             if (randomIndex)
             {
+                // Randomly select one of the 4 rooms left 
                 string scene = "";
                 int roomNum = UnityEngine.Random.Range(0,roomScenes.Count-1);
                 scene = roomScenes.ToArray()[roomNum];
