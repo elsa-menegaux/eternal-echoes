@@ -31,7 +31,8 @@ public class UIManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name == "BattleScene")
+        // Hide HUD in Battle and Lobby scenes as they are not relevant there
+        if (scene.name == "BattleScene" || scene.name == "Lobby")
         {
             Debug.Log("Hide HUD");
             hud_Object.SetActive(false);
