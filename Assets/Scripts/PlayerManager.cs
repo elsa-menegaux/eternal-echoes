@@ -7,8 +7,10 @@ public class PlayerManager : MonoBehaviour
 {
     public static PlayerManager Instance;
 
-    public PlayerStats playerStats;
-    public PlayerBattleHUD OverworldHUD;
+    //public PlayerBattleHUD OverworldHUD;
+
+    public GameObject playerObject;
+    [HideInInspector] public PlayerStats playerStats;
 
     private void Awake()
     {
@@ -28,20 +30,20 @@ public class PlayerManager : MonoBehaviour
     private void Start()
     {
         // Assign PlayerStats from the existing player GameObject
-        playerStats = GetComponentInChildren<PlayerStats>();
+        playerStats = playerObject.GetComponent<PlayerStats>();
 
         // Automatically find and assign PlayerBattleHUD
-        OverworldHUD = FindObjectOfType<PlayerBattleHUD>();
-        if (OverworldHUD != null)
-        {
-            Debug.Log("OverworldHUD found and assigned.");
-            OverworldHUD.SetHUD(playerStats);
-        }
-        else
-        {
-            Debug.LogError("OverworldHUD not found!");
-        }
-
+        //OverworldHUD = FindObjectOfType<PlayerBattleHUD>();
+        //if (OverworldHUD != null)
+        //{
+        //    Debug.Log("OverworldHUD found and assigned.");
+        //    OverworldHUD.SetHUD(playerStats);
+        //}
+        //else
+        //{
+        //    Debug.LogError("OverworldHUD not found!");
+        //}
+//
         if (playerStats != null)
         {
             Debug.Log("PlayerStats assigned: " + playerStats.Name);
@@ -65,25 +67,31 @@ public class PlayerManager : MonoBehaviour
 	private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
 	{
 		// Check if the current scene is the overworld
-		if (scene.name == "OverworldTestScene") // replace with actual scene name
-		{
-			OverworldHUD = FindObjectOfType<PlayerBattleHUD>();
-			if (OverworldHUD != null)
-			{
-				OverworldHUD.SetHUD(playerStats);
-			}
-			else
-			{
-				Debug.LogError("OverworldHUD not found after scene load!");
-			}
-		}
+		//if (scene.name == "OverworldTestScene") // replace with actual scene name
+		//{
+		//	OverworldHUD = FindObjectOfType<PlayerBattleHUD>();
+		//	if (OverworldHUD != null)
+		//	{
+		//		OverworldHUD.SetHUD(playerStats);
+		//	}
+		//	else
+		//	{
+		//		Debug.LogError("OverworldHUD not found after scene load!");
+		//	}
+		//}
+
+        if (scene.name != GameData.PreviousSceneName && scene.name != "BattleScene")
+        {
+            //New Room is detected
+            playerObject.transform.position = GameObject.Find("PlayerStartPosition").transform.position;
+        }
 	}
 
     private void Update()
     {
-        if (playerStats != null && OverworldHUD != null)
-        {
-            OverworldHUD.SetHP(playerStats.currentHealth);
-        }
+        //if (playerStats != null && OverworldHUD != null)
+        //{
+        //    OverworldHUD.SetHP(playerStats.currentHealth);
+        //}
     }
 }

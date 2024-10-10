@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public abstract class Unit : MonoBehaviour
 {
 	[SerializeField] protected int startingStrength = 5;

@@ -7,6 +7,8 @@ using TMPro;
 public class HUDManager : MonoBehaviour
 {
 
+    public bool findPlayerStatsInScene = true;
+
     public Image healthSlider;
     public TextMeshProUGUI coinsText;
     public TMP_InputField inputField;
@@ -14,19 +16,32 @@ public class HUDManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerStats = GameObject.FindObjectOfType<PlayerManager>().playerStats;
-        
+        if (findPlayerStatsInScene)
+        {
+            playerStats = GameObject.FindObjectOfType<PlayerManager>().playerStats;
+        }
     }
 
     // Update is called once per frame
     void Update()
-    {
-        coinsText.text = playerStats.Money + " Coins";
-        healthSlider.fillAmount = playerStats.currentHealth/playerStats.maxHealth;
-        
+    {   if (playerStats != null)
+        {
+            updateHealthBar(playerStats.currentHealth, playerStats.maxHealth);
+            updateCoinsValue(playerStats.Money);
+        }
     }
 
-        public void SavePlayerName()
+    public void updateHealthBar(float currentHealth, float maxHealth)
+    {
+        healthSlider.fillAmount = currentHealth/maxHealth;
+    }
+
+    public void updateCoinsValue(int coinsCount)
+    {
+        coinsText.text = coinsCount + " Coins";
+    }
+
+    public void SavePlayerName()
     {
         // Access the text from the InputField and store it in the playerName variable
         playerStats.Name = inputField.text;
