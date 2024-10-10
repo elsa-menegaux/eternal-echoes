@@ -41,7 +41,8 @@ public class LevelSwitch : MonoBehaviour
                     }
                 }
                 SceneManager.LoadScene(scene);
-            } else{
+            } 
+            else {
                 SceneManager.LoadScene(sceneBuildIndex);
             }
             

@@ -10,6 +10,10 @@ public class UIManager : MonoBehaviour
 
     public GameObject hud_Object;
     private Canvas canvas;
+    
+    // For debugging purposes
+    public GameObject pauseButton;
+    public GameObject pauseMenu;
 
     private void Awake()
     {
@@ -31,6 +35,14 @@ public class UIManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        Debug.Log("Scene load.");
+        if (pauseButton != null && (pauseButton.activeSelf != true))
+        {
+            Debug.Log("Time to activate the pause button.");
+            pauseMenu.SetActive(false);
+            pauseButton.SetActive(true);
+        }
+
         // Hide HUD in Battle and Lobby scenes as they are not relevant there
         if (scene.name == "BattleScene" || scene.name == "Lobby")
         {
