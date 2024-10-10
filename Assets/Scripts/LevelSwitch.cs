@@ -27,9 +27,9 @@ public class LevelSwitch : MonoBehaviour
         if (entity.CompareTag("Player"))
         {
             Debug.Log("Player detected");
+            // Randomly select one of the 4 rooms left 
             if (randomIndex)
             {
-                // Randomly select one of the 4 rooms left 
                 string scene = "";
                 int roomNum = UnityEngine.Random.Range(0,roomScenes.Count-1);
                 scene = roomScenes.ToArray()[roomNum];
