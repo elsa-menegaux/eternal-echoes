@@ -7379,6 +7379,7 @@ MonoBehaviour:
   hud_Object: {fileID: 1900792776}
   pauseButton: {fileID: 1480819839}
   pauseMenu: {fileID: 1116253949}
+  LobbyButton: {fileID: 566264925}
 --- !u!114 &1024292652
 MonoBehaviour:
   m_ObjectHideFlags: 0

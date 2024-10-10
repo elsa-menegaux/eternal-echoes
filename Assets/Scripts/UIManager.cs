@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class UIManager : MonoBehaviour
     // For debugging purposes
     public GameObject pauseButton;
     public GameObject pauseMenu;
+    public Button LobbyButton;
 
     private void Awake()
     {
@@ -57,6 +59,15 @@ public class UIManager : MonoBehaviour
             GameObject eventSystem = new GameObject("EventSystem", typeof(EventSystem), typeof(StandaloneInputModule));
         }
         canvas.worldCamera = FindObjectOfType<Camera>();
+
+        if (scene.name == "Lobby")
+        {
+            LobbyButton.interactable = false;
+        }
+        else
+        {
+            LobbyButton.interactable = true;
+        }
     }
 
     private void OnEnable()
