@@ -10,6 +10,6 @@ public class MainMenu : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("Room 1");
+        SceneManager.LoadScene("Lobby");
     }
 }
