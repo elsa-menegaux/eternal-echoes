@@ -130,6 +130,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1705504225}
     m_Modifications:
+    - target: {fileID: 3630588172611822636, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: m_Name
+      value: Computer Virus (7)
+      objectReference: {fileID: 0}
     - target: {fileID: 4565920152118321486, guid: 65faa96264156914099a74a06531ae25, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.46
@@ -170,10 +174,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3630588172611822636, guid: 65faa96264156914099a74a06531ae25, type: 3}
-      propertyPath: m_Name
-      value: Computer Virus (7)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -192,6 +192,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1705504225}
     m_Modifications:
+    - target: {fileID: 3630588172611822636, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: m_Name
+      value: Computer Virus (4)
+      objectReference: {fileID: 0}
     - target: {fileID: 4565920152118321486, guid: 65faa96264156914099a74a06531ae25, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.56
@@ -232,10 +236,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3630588172611822636, guid: 65faa96264156914099a74a06531ae25, type: 3}
-      propertyPath: m_Name
-      value: Computer Virus (4)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -254,6 +254,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1705504225}
     m_Modifications:
+    - target: {fileID: 3630588172611822636, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: m_Name
+      value: Computer Virus
+      objectReference: {fileID: 0}
     - target: {fileID: 4565920152118321486, guid: 65faa96264156914099a74a06531ae25, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.45
@@ -294,10 +298,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3630588172611822636, guid: 65faa96264156914099a74a06531ae25, type: 3}
-      propertyPath: m_Name
-      value: Computer Virus
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -316,6 +316,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1705504225}
     m_Modifications:
+    - target: {fileID: 3630588172611822636, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: m_Name
+      value: Computer Virus (5)
+      objectReference: {fileID: 0}
     - target: {fileID: 4565920152118321486, guid: 65faa96264156914099a74a06531ae25, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.97
@@ -355,10 +359,6 @@ PrefabInstance:
     - target: {fileID: 4565920152118321486, guid: 65faa96264156914099a74a06531ae25, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3630588172611822636, guid: 65faa96264156914099a74a06531ae25, type: 3}
-      propertyPath: m_Name
-      value: Computer Virus (5)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -547,6 +547,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1705504225}
     m_Modifications:
+    - target: {fileID: 3630588172611822636, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: m_Name
+      value: Computer Virus (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 4565920152118321486, guid: 65faa96264156914099a74a06531ae25, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.04
@@ -586,10 +590,6 @@ PrefabInstance:
     - target: {fileID: 4565920152118321486, guid: 65faa96264156914099a74a06531ae25, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3630588172611822636, guid: 65faa96264156914099a74a06531ae25, type: 3}
-      propertyPath: m_Name
-      value: Computer Virus (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -675,7 +675,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: bf83f595dfd471d48ae9244db67dcc9f, type: 3}
-  m_Color: {r: 0.72327036, g: 0.72327036, b: 0.72327036, a: 1}
+  m_Color: {r: 0.21960784, g: 0.69803923, b: 0.5176471, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -699,7 +699,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1433665074
 Transform:
@@ -823,6 +823,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1705504225}
     m_Modifications:
+    - target: {fileID: 3630588172611822636, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: m_Name
+      value: Computer Virus (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 4565920152118321486, guid: 65faa96264156914099a74a06531ae25, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.47
@@ -862,10 +866,6 @@ PrefabInstance:
     - target: {fileID: 4565920152118321486, guid: 65faa96264156914099a74a06531ae25, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3630588172611822636, guid: 65faa96264156914099a74a06531ae25, type: 3}
-      propertyPath: m_Name
-      value: Computer Virus (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -981,6 +981,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1705504225}
     m_Modifications:
+    - target: {fileID: 3630588172611822636, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: m_Name
+      value: Computer Virus (3)
+      objectReference: {fileID: 0}
     - target: {fileID: 4565920152118321486, guid: 65faa96264156914099a74a06531ae25, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.54
@@ -1021,10 +1025,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3630588172611822636, guid: 65faa96264156914099a74a06531ae25, type: 3}
-      propertyPath: m_Name
-      value: Computer Virus (3)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1043,6 +1043,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1705504225}
     m_Modifications:
+    - target: {fileID: 3630588172611822636, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: m_Name
+      value: Computer Virus (6)
+      objectReference: {fileID: 0}
     - target: {fileID: 4565920152118321486, guid: 65faa96264156914099a74a06531ae25, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.48
@@ -1082,10 +1086,6 @@ PrefabInstance:
     - target: {fileID: 4565920152118321486, guid: 65faa96264156914099a74a06531ae25, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3630588172611822636, guid: 65faa96264156914099a74a06531ae25, type: 3}
-      propertyPath: m_Name
-      value: Computer Virus (6)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
