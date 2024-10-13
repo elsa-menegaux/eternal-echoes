@@ -12,9 +12,116 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54b3449ff289fef439c2911f5e2765ce, type: 3}
   m_Name: ItemsDatabase
   m_EditorClassIdentifier: 
-  itemName: 
-  itemSprite: {fileID: 0}
-  attackModifier: 0
-  maxHealthModifier: 0
-  healthModifier: 0
-  IntelligenceModifier: 0
+  itemDataArray:
+  - itemName: Neon Sword
+    sprite: {fileID: 21300000, guid: b0e0bd17d617e0147b1a0b6dd2bd4cbb, type: 3}
+    strengthModifier: 0
+    enduranceModifier: 0
+    intelligenceModifier: 0
+    reflexesModifier: 0
+    technicalModifier: 0
+    maxHealthModifier: 0
+    healthModifier: 0
+    damageModifier: 2
+    abilityDamageModifier: 0
+    critChanceModifier: 0
+    critDamageModifier: 2
+    dodgeRateModifier: 0
+  - itemName: Bubble Shield
+    sprite: {fileID: 21300000, guid: d8b0fd1a8cf54924593b65ed770ebb45, type: 3}
+    strengthModifier: 0
+    enduranceModifier: 0
+    intelligenceModifier: 0
+    reflexesModifier: 0
+    technicalModifier: 0
+    maxHealthModifier: 10
+    healthModifier: 0
+    damageModifier: 0
+    abilityDamageModifier: 0
+    critChanceModifier: 0
+    critDamageModifier: 0
+    dodgeRateModifier: 3
+  - itemName: Cable
+    sprite: {fileID: 21300000, guid: 217a7a136086fa24f832ef0b59150db8, type: 3}
+    strengthModifier: 0
+    enduranceModifier: 0
+    intelligenceModifier: 1
+    reflexesModifier: 1
+    technicalModifier: 1
+    maxHealthModifier: 0
+    healthModifier: 0
+    damageModifier: 0
+    abilityDamageModifier: 0
+    critChanceModifier: 0
+    critDamageModifier: 0
+    dodgeRateModifier: 0
+  - itemName: Disc
+    sprite: {fileID: 21300000, guid: 37692a60bd6f2d340a33b67e50d9128f, type: 3}
+    strengthModifier: 1
+    enduranceModifier: 1
+    intelligenceModifier: 1
+    reflexesModifier: 1
+    technicalModifier: 1
+    maxHealthModifier: 1
+    healthModifier: 1
+    damageModifier: 1
+    abilityDamageModifier: 1
+    critChanceModifier: 1
+    critDamageModifier: 1
+    dodgeRateModifier: 1
+  - itemName: Glasses
+    sprite: {fileID: 21300000, guid: a95b3ae6e0db29d4f8a144c5520c2266, type: 3}
+    strengthModifier: 0
+    enduranceModifier: 0
+    intelligenceModifier: 0
+    reflexesModifier: 0
+    technicalModifier: 0
+    maxHealthModifier: 0
+    healthModifier: 0
+    damageModifier: 0
+    abilityDamageModifier: 0
+    critChanceModifier: 8
+    critDamageModifier: 0
+    dodgeRateModifier: 0
+  - itemName: Potion
+    sprite: {fileID: 21300000, guid: a59219970bd65b7458c87f6314cb9314, type: 3}
+    strengthModifier: 0
+    enduranceModifier: 0
+    intelligenceModifier: 0
+    reflexesModifier: 0
+    technicalModifier: 0
+    maxHealthModifier: 0
+    healthModifier: 10
+    damageModifier: 0
+    abilityDamageModifier: 0
+    critChanceModifier: 0
+    critDamageModifier: 0
+    dodgeRateModifier: 0
+  - itemName: Gun
+    sprite: {fileID: 21300000, guid: cb5c1e6e9ca5d7a408d8e2f4c22208cd, type: 3}
+    strengthModifier: 0
+    enduranceModifier: 0
+    intelligenceModifier: 0
+    reflexesModifier: 0
+    technicalModifier: 1
+    maxHealthModifier: 0
+    healthModifier: 0
+    damageModifier: 4
+    abilityDamageModifier: 0
+    critChanceModifier: 0
+    critDamageModifier: 0
+    dodgeRateModifier: 0
+  - itemName: Shoes
+    sprite: {fileID: 21300000, guid: ff0b3008513e3fd409bcbba6cbc04627, type: 3}
+    strengthModifier: 0
+    enduranceModifier: 2
+    intelligenceModifier: 0
+    reflexesModifier: 2
+    technicalModifier: 0
+    maxHealthModifier: 0
+    healthModifier: 0
+    damageModifier: 0
+    abilityDamageModifier: 0
+    critChanceModifier: 0
+    critDamageModifier: 0
+    dodgeRateModifier: 2

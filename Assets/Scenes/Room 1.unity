@@ -13058,6 +13058,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hud_Object: {fileID: 2036096045}
+  pauseButton: {fileID: 0}
+  pauseMenu: {fileID: 0}
+  LobbyButton: {fileID: 0}
 --- !u!1 &1975674252
 GameObject:
   m_ObjectHideFlags: 0
