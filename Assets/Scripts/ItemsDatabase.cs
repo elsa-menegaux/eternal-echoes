@@ -8,6 +8,7 @@ public class ItemDatabase : ScriptableObject
     {
         public string itemName;
         public Sprite sprite;
+        public string description;
         // Since there is not large number of items and no complex behavior for them, all stats modifiers will be there below
         public int strengthModifier;
         public int enduranceModifier;
