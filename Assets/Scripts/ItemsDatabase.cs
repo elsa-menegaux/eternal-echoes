@@ -1,5 +1,7 @@
 using UnityEngine;
 
+// This file handles items Data storage and retrieval
+
 [CreateAssetMenu(fileName = "ItemsDatabase", menuName = "ScriptableObjects/ItemsDatabase")]
 public class ItemDatabase : ScriptableObject
 {
@@ -9,7 +11,9 @@ public class ItemDatabase : ScriptableObject
         public string itemName;
         public Sprite sprite;
         public string description;
-        // Since there is not large number of items and no complex behavior for them, all stats modifiers will be there below
+
+        // Since there is not large number of items and no complex behavior for them, all stats modifiers will be there below. 
+        // Most of them relate to stats the player character has, or can have.
         public int strengthModifier;
         public int enduranceModifier;
         public int intelligenceModifier;
@@ -26,6 +30,7 @@ public class ItemDatabase : ScriptableObject
 
     public ItemData[] itemDataArray;
 
+
     public ItemData GetItemDataByName(string itemName)
     {
         foreach (var itemData in itemDataArray)
@@ -35,6 +40,8 @@ public class ItemDatabase : ScriptableObject
                 return itemData;
             }
         }
-        return null; // Return null if not found
+        // If not found
+        Debug.Log("Item not found in Database: " + itemName);
+        return null; 
     }
 }
