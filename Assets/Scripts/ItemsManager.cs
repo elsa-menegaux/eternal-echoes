@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class ItemManager : MonoBehaviour
 {
-    public ItemDatabase itemDatabase; 
+    public ItemsDatabase itemDatabase; 
+    public PlayerStats playerStats;
 
     public void UseItem(string itemName)
     {
-        ItemData itemData = itemDatabase.GetItemDataByName(itemName); // Get item from Database
+        ItemsDatabase.ItemData itemData = itemDatabase.GetItemDataByName(itemName); // Get item from Database
         if (itemData != null)
         {
             Debug.Log("Using item: " + itemData.itemName);
@@ -37,30 +38,37 @@ public class ItemManager : MonoBehaviour
             if (itemData.maxHealthModifier != 0)
             {
                 Debug.Log("Alter maxHealth: " + itemData.maxHealthModifier);
+                playerStats.maxHealth += itemData.maxHealthModifier;
             }
             if (itemData.healthModifier != 0)
             {
                 Debug.Log("Alter health: " + itemData.healthModifier);
+                playerStats.currentHealth += itemData.healthModifier;
             }
             if (itemData.damageModifier != 0)
             {
                 Debug.Log("Alter damage: " + itemData.damageModifier);
+                playerStats.currentDamage += itemData.damageModifier;
             }
             if (itemData.abilityDamageModifier != 0)
             {
                 Debug.Log("Alter abilityDamage: " + itemData.abilityDamageModifier);
+                playerStats.currentAbilityDamage += itemData.abilityDamageModifier;
             }
             if (itemData.critChanceModifier != 0)
             {
                 Debug.Log("Alter critChance: " + itemData.critChanceModifier);
+                playerStats.currentCritChance += itemData.critChanceModifier;
             }
             if (itemData.critDamageModifier != 0)
             {
                 Debug.Log("Alter critDamage: " + itemData.critDamageModifier);
+                playerStats.currentCritDamage += itemData.critDamageModifier;
             }
             if (itemData.dodgeRateModifier != 0)
             {
                 Debug.Log("Alter dodgeRate: " + itemData.dodgeRateModifier);
+                playerStats.currentDodgeRate += itemData.dodgeRateModifier;
             }
         }
         else

@@ -3,7 +3,7 @@ using UnityEngine;
 // This file handles items Data storage and retrieval
 
 [CreateAssetMenu(fileName = "ItemsDatabase", menuName = "ScriptableObjects/ItemsDatabase")]
-public class ItemDatabase : ScriptableObject
+public class ItemsDatabase : ScriptableObject
 {
     [System.Serializable]
     public class ItemData
@@ -41,7 +41,7 @@ public class ItemDatabase : ScriptableObject
             }
         }
         // If not found
-        Debug.Log("Item not found in Database: " + itemName);
+        Debug.LogWarning("Item not found in Database: " + itemName);
         return null; 
     }
 }
