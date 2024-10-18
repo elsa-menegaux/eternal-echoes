@@ -79,4 +79,12 @@ public class UIManager : MonoBehaviour
 	{
 		SceneManager.sceneLoaded -= OnSceneLoaded;
 	}
+
+    private void Update()
+    {
+        if (DontDestroyOnLoadDestroyer.killAllObjects)
+        {
+            Destroy(gameObject);
+        }
+    }
 }
