@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerStats : Unit
+public class PlayerStats : Unit, IDataPersistence
 {
 	[SerializeField] public string playerName = "Player";
 	[SerializeField] public int level = 1;
@@ -59,5 +59,14 @@ public class PlayerStats : Unit
         this.overrideStats = playerStatsData.overrideStats;
         this.overrideCalculatedHealth = playerStatsData.overrideCalculatedHealth;
 	}
-	
+
+    public void LoadData(PersistentGameData persistentGameData)
+    {
+        this.loadFromPlayerStatsData(persistentGameData.playerStats);
+    }
+
+    public void SaveData(ref PersistentGameData persistentGameData)
+    {
+        persistentGameData.playerStats = new PlayerStatsData(this);
+    }
 }
