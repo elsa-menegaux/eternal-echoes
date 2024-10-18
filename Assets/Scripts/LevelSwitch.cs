@@ -11,6 +11,8 @@ public class LevelSwitch : MonoBehaviour
 
     public bool randomIndex = true;
     public bool banSameRoom = true;
+
+    // List of available rooms
     public List<string> roomScenes = new List<string>{"Room 1","Room 2","Room 3","Room 4","Room 5"};
     
     // If Exit zone is entered and collider is a player
@@ -25,6 +27,7 @@ public class LevelSwitch : MonoBehaviour
         if (entity.CompareTag("Player"))
         {
             Debug.Log("Player detected");
+            // Randomly select one of the 4 rooms left 
             if (randomIndex)
             {
                 string scene = "";
@@ -40,7 +43,8 @@ public class LevelSwitch : MonoBehaviour
                 //Reset Enemy  Status' before new room
                 GameManager.instance.enemyStatus = new Dictionary<string, bool>();
                 SceneManager.LoadScene(scene);
-            } else{
+            } 
+            else {
                 SceneManager.LoadScene(sceneBuildIndex);
                 //Reset Enemy  Status' before new room
                 GameManager.instance.enemyStatus = new Dictionary<string, bool>();

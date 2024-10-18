@@ -36,4 +36,9 @@ public class PauseMenu : MonoBehaviour
 
     }
 
+    public void ReturnToLobby()
+    {
+        SceneManager.LoadScene("Lobby");
+    }
+    // NB : we need to reset the game for any of those actions.
 }
