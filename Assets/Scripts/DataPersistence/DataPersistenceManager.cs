@@ -56,6 +56,9 @@ public class DataPersistenceManager : MonoBehaviour
 
     public void LoadGame()
     {
+        InitDataHandler();
+        CollectDataObjectsFromScene();
+
         // load any saved data from fileHandler
         this.persistentGameData = dataHandler.Load();
 

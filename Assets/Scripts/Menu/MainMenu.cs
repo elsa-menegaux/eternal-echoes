@@ -21,6 +21,15 @@ public class MainMenu : MonoBehaviour
         StartCoroutine("LoadLobby");
     }
 
+    public void ContinueGame()
+    {
+        DontDestroyOnLoadDestroyer.killAllObjects = true;
+        PlayerManager.loadFromSave = true;
+        PlayerManager.loadCounter = 0;
+        
+        StartCoroutine("LoadLobby");
+    }
+
     IEnumerator LoadLobby()
     {
         yield return new WaitForSeconds(1);

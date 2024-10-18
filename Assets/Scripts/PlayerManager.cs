@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class PlayerManager : MonoBehaviour, IDataPersistence
 {
     public static PlayerManager Instance;
+    public static bool loadFromSave = false;
+    public static int loadCounter = 0;
 
     //public PlayerBattleHUD OverworldHUD;
 
@@ -89,6 +91,17 @@ public class PlayerManager : MonoBehaviour, IDataPersistence
                 playerObject.transform.position = playerStart.transform.position;
             }
             
+        }
+        if (loadFromSave && loadCounter < 2)
+        {
+            if (DataPersistenceManager.instance != null)
+            {
+                DataPersistenceManager.instance.LoadGame();
+                loadCounter+=1;
+            }
+        } else {
+            loadFromSave = false;
+            loadCounter = 0;
         }
 	}
 
