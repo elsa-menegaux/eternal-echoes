@@ -9,7 +9,7 @@ public class PersistentGameData
     public Vector3 playerPosition;
     public string playerScene;
     public SerializableDictionary<string, bool> enemyStatus;
-    public PlayerStats playerStats;
+    public PlayerStatsData playerStats;
 
 
     //the values defined in this constructor will be the default values

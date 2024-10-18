@@ -27,9 +27,9 @@ public class FileHandlerTest
         fileDataHandler.Save(dataToTestSave);
 
         string savedContent = File.ReadAllText(fullPath);
-        Assert.IsTrue(savedContent.Contains("\"playerPosition\":"));
-        Assert.IsTrue(savedContent.Contains("\"enemyStatus\":"));
-        Assert.IsTrue(savedContent.Contains("\"playerScene\": \"TestScene\""));
+        Assert.IsTrue(savedContent.Contains("\"playerPosition\":"), "Finding 'playerPosition' Entry in Json");
+        Assert.IsTrue(savedContent.Contains("\"enemyStatus\":"), "Finding 'enemyStatus' Entry in Json");
+        Assert.IsTrue(savedContent.Contains("\"playerScene\": \"TestScene\""), "Finding 'playerScene' Entry in Json");
 
         // Cleanup
         File.Delete(fullPath);
