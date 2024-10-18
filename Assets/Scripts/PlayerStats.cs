@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PlayerStats : Unit
 {
-	[SerializeField] public string Name = "Player";
-	[SerializeField] public int Level = 1;
+	[SerializeField] public string playerName = "Player";
+	[SerializeField] public int level = 1;
 	[SerializeField] public float damageModifier = 0.2F;
 	
-	public int Money;
+	public int money;
 	
 	private void Awake() 
 	{
@@ -16,8 +16,9 @@ public class PlayerStats : Unit
 		if (PlayerManager.Instance != null && PlayerManager.Instance.playerStats != null)
 		{
 			// Set player stats from PlayerManager
-			Name = PlayerManager.Instance.playerStats.Name;
-			Level = PlayerManager.Instance.playerStats.Level;
+
+			playerName = PlayerManager.Instance.playerStats.playerName;
+			level = PlayerManager.Instance.playerStats.level;
 			maxHealth = PlayerManager.Instance.playerStats.maxHealth;
 			currentHealth = PlayerManager.Instance.playerStats.currentHealth;
 			currentDamage = PlayerManager.Instance.playerStats.currentDamage; 
@@ -32,13 +33,31 @@ public class PlayerStats : Unit
     // Start is called before the first frame update
     private void Start()
     {
-		Debug.Log("Player Name: " + Name);
+		Debug.Log("Player Name: " + playerName);
         Debug.Log("Initial Health: " + currentHealth);
     }
 	
 	public void GainMoney(int reward)
 	{
-		Money+=reward;
+		money+=reward;
+	}
+
+	public void loadFromPlayerStatsData(PlayerStatsData playerStatsData)
+	{
+		this.playerName = playerStatsData.playerName;
+        this.level = playerStatsData.level;
+        this.damageModifier = playerStatsData.damageModifier;
+        this.money = playerStatsData.money;
+
+        this.maxHealth = playerStatsData.maxHealth;
+        this.currentHealth = playerStatsData.currentHealth;
+        this.currentDamage = playerStatsData.currentDamage;
+        this.currentAbilityDamage = playerStatsData.currentAbilityDamage;
+        this.currentCritChance = playerStatsData.currentCritChance;
+        this.currentCritDamage = playerStatsData.currentCritDamage;
+        this.currentDodgeRate = playerStatsData.currentDodgeRate;
+        this.overrideStats = playerStatsData.overrideStats;
+        this.overrideCalculatedHealth = playerStatsData.overrideCalculatedHealth;
 	}
 	
 }

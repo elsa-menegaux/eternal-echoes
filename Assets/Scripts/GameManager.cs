@@ -43,4 +43,12 @@ public class GameManager : MonoBehaviour, IDataPersistence
 		}
 		
 	}
+
+    private void Update()
+    {
+        if (DontDestroyOnLoadDestroyer.killAllObjects)
+        {
+            Destroy(gameObject);
+        }
+    }
 }

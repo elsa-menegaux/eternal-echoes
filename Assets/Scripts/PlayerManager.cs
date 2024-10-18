@@ -46,7 +46,7 @@ public class PlayerManager : MonoBehaviour, IDataPersistence
 //
         if (playerStats != null)
         {
-            Debug.Log("PlayerStats assigned: " + playerStats.Name);
+            Debug.Log("PlayerStats assigned: " + playerStats.playerName);
         }
         else
         {
@@ -94,10 +94,10 @@ public class PlayerManager : MonoBehaviour, IDataPersistence
 
     private void Update()
     {
-        //if (playerStats != null && OverworldHUD != null)
-        //{
-        //    OverworldHUD.SetHP(playerStats.currentHealth);
-        //}
+        if (DontDestroyOnLoadDestroyer.killAllObjects)
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void LoadData(PersistentGameData persistentGameData)
