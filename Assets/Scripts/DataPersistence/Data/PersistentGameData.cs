@@ -23,5 +23,4 @@ public class PersistentGameData
 
         enemyStatus = new SerializableDictionary<string, bool>();
     }
-
 }
