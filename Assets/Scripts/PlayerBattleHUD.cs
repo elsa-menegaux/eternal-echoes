@@ -19,8 +19,8 @@ public class PlayerBattleHUD : MonoBehaviour
 			return; // Prevent further execution
 		}
 
-		nameText.text = unit.Name;
-		levelText.text = "Lvl " + unit.Level;
+		nameText.text = unit.playerName;
+		levelText.text = "Lvl " + unit.level;
 		hpSlider.maxValue = unit.maxHealth;
 		hpSlider.value = unit.currentHealth;
 		hpText.text = unit.currentHealth +"/"+unit.maxHealth;

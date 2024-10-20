@@ -40,10 +40,14 @@ public class LevelSwitch : MonoBehaviour
                         scene = roomScenes.ToArray()[roomNum];
                     }
                 }
+                //Reset Enemy  Status' before new room
+                GameManager.instance.enemyStatus = new Dictionary<string, bool>();
                 SceneManager.LoadScene(scene);
             } 
             else {
                 SceneManager.LoadScene(sceneBuildIndex);
+                //Reset Enemy  Status' before new room
+                GameManager.instance.enemyStatus = new Dictionary<string, bool>();
             }
             
         }

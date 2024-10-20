@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayerManager : MonoBehaviour
+public class PlayerManager : MonoBehaviour, IDataPersistence
 {
     public static PlayerManager Instance;
+    public static bool loadFromSave = false;
+    public static int loadCounter = 0;
 
     //public PlayerBattleHUD OverworldHUD;
 
@@ -46,7 +48,7 @@ public class PlayerManager : MonoBehaviour
 //
         if (playerStats != null)
         {
-            Debug.Log("PlayerStats assigned: " + playerStats.Name);
+            Debug.Log("PlayerStats assigned: " + playerStats.playerName);
         }
         else
         {
@@ -83,15 +85,58 @@ public class PlayerManager : MonoBehaviour
         if (scene.name != GameData.PreviousSceneName && scene.name != "BattleScene")
         {
             //New Room is detected
-            playerObject.transform.position = GameObject.Find("PlayerStartPosition").transform.position;
+            GameObject playerStart = GameObject.Find("PlayerStartPosition");
+            if (playerStart != null)
+            {
+                playerObject.transform.position = playerStart.transform.position;
+            }
+            
+        }
+        if (loadFromSave && loadCounter < 2)
+        {
+            if (DataPersistenceManager.instance != null)
+            {
+                DataPersistenceManager.instance.LoadGame();
+                loadCounter+=1;
+            }
+        } else {
+            loadFromSave = false;
+            loadCounter = 0;
         }
 	}
 
     private void Update()
     {
-        //if (playerStats != null && OverworldHUD != null)
-        //{
-        //    OverworldHUD.SetHP(playerStats.currentHealth);
-        //}
+        if (DontDestroyOnLoadDestroyer.killAllObjects)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    public void LoadData(PersistentGameData persistentGameData)
+    {
+        //load needed scene first
+        if (SceneManager.GetActiveScene().name != persistentGameData.playerScene)
+        {
+            SceneManager.LoadScene(persistentGameData.playerScene);
+        }
+
+
+        //Load Player position only if not Negative Infinity
+        if (!persistentGameData.playerPosition.Equals(Vector3.negativeInfinity))
+        {
+            playerObject.transform.position = persistentGameData.playerPosition;
+        }
+
+        
+    }
+
+    public void SaveData(ref PersistentGameData persistentGameData)
+    {
+        //Save player position
+        persistentGameData.playerPosition = playerObject.transform.position;
+
+        //Save Current Scene Name// or build index
+        persistentGameData.playerScene = SceneManager.GetActiveScene().name;
     }
 }
