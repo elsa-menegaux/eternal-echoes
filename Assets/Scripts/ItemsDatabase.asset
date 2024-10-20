@@ -17,6 +17,7 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: b0e0bd17d617e0147b1a0b6dd2bd4cbb, type: 3}
     description: A neon bar stitched to a metal pipe, surprinsingly creating a credible
       sword.
+    price: 2
     strengthModifier: 0
     enduranceModifier: 0
     intelligenceModifier: 0
@@ -33,6 +34,7 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: d8b0fd1a8cf54924593b65ed770ebb45, type: 3}
     description: A glitchy pixel allowed for a protective holographic shield to form
       around you.
+    price: 3
     strengthModifier: 0
     enduranceModifier: 0
     intelligenceModifier: 0
@@ -48,6 +50,7 @@ MonoBehaviour:
   - itemName: Cable
     sprite: {fileID: 21300000, guid: 217a7a136086fa24f832ef0b59150db8, type: 3}
     description: Inspiration can come from the most mundane objects ...
+    price: 5
     strengthModifier: 0
     enduranceModifier: 0
     intelligenceModifier: 1
@@ -64,6 +67,7 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: 37692a60bd6f2d340a33b67e50d9128f, type: 3}
     description: A computer component is always a rare but precious find, that can
       bring many advantages.
+    price: 20
     strengthModifier: 1
     enduranceModifier: 1
     intelligenceModifier: 1
@@ -80,6 +84,7 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: a95b3ae6e0db29d4f8a144c5520c2266, type: 3}
     description: A pair of glass to allow for tremendous precision, now that you
       can see better what's in front of you.
+    price: 12
     strengthModifier: 0
     enduranceModifier: 0
     intelligenceModifier: 0
@@ -96,6 +101,7 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: a59219970bd65b7458c87f6314cb9314, type: 3}
     description: This strange liquid should probably not be going in your system.
       Good thing all of this is a simulation.
+    price: 3
     strengthModifier: 0
     enduranceModifier: 0
     intelligenceModifier: 0
@@ -112,6 +118,7 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: cb5c1e6e9ca5d7a408d8e2f4c22208cd, type: 3}
     description: A scrappy but very convenient tool that is sure to deal a good amount
       of damage.
+    price: 2
     strengthModifier: 0
     enduranceModifier: 0
     intelligenceModifier: 0
@@ -128,6 +135,7 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: ff0b3008513e3fd409bcbba6cbc04627, type: 3}
     description: Some equipment for your avatar can always help with your movement
       - and they look great, too !
+    price: 3
     strengthModifier: 0
     enduranceModifier: 2
     intelligenceModifier: 0
