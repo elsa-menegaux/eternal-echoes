@@ -6,6 +6,20 @@ public class ItemManager : MonoBehaviour
 {
     public ItemsDatabase itemDatabase; 
     public PlayerStats playerStats;
+    public PlayerManager playerManager;
+
+    // private void Start()
+    // {
+    //    playerManager = GameObject.Find
+    //    if (playerManager != null)
+    //    {
+    //     Debug.Log("Found PlayerManager");
+    //    }
+    //    else
+    //    {
+    //     Debug.Log("PlayerManager not found.");
+    //    }
+    // }
 
     public void UseItem(string itemName)
     {
@@ -18,6 +32,7 @@ public class ItemManager : MonoBehaviour
             if (itemData.strengthModifier != 0)
             {
                 Debug.Log("Alter strength: " + itemData.strengthModifier);
+                
             }
             if (itemData.enduranceModifier != 0)
             {
