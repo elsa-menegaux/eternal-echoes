@@ -1,18 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour, IDataPersistence
 {
     public static GameManager instance;
-    public List<string> dungeonLevels = new List<string>() { "Room 1", "Room 2", "Room 3", "Room 4", "Room 5" };
 	
     public Dictionary<string, bool> enemyStatus = new Dictionary<string, bool>();
-    [Range(0,100)][Tooltip("Percentage Change on range 0-100")]
-    public float echoSpawnChance = 1f; //1f being 1%
-
 
     public void LoadData(PersistentGameData persistentGameData)
     {
@@ -55,28 +49,6 @@ public class GameManager : MonoBehaviour, IDataPersistence
         if (DontDestroyOnLoadDestroyer.killAllObjects)
         {
             Destroy(gameObject);
-        }
-    }
-
-    private void OnEnable()
-	{
-		SceneManager.sceneLoaded += OnSceneLoaded;
-	}
-    private void OnDisable()
-	{
-		SceneManager.sceneLoaded -= OnSceneLoaded;
-	}
-
-    private void OnSceneLoaded(Scene scene, LoadSceneMode arg1)
-    {
-        if (dungeonLevels.Contains(scene.name))
-        {
-            float echoSpawnRoll = Random.Range(0f,100f);
-            if (echoSpawnRoll <= echoSpawnChance)
-            {
-                //spawn Echo
-                Debug.LogWarning("Spawn Echo!!");
-            }
         }
     }
 }
