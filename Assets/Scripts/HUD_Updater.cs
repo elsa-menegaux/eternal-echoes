@@ -18,7 +18,7 @@ public class HUDManager : MonoBehaviour
     {
         if (findPlayerStatsInScene)
         {
-            playerStats = GameObject.FindObjectOfType<PlayerManager>().playerStats;
+            playerStats =  PlayerManager.Instance.playerStats;
         }
     }
 
