@@ -10122,6 +10122,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77d72d2f49395cf4c8374fc6ca797776, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dungeonLevels:
+  - Room 1
+  - Room 2
+  - Room 3
+  - Room 4
+  - Room 5
+  echoSpawnChance: 1
 --- !u!4 &1507136360
 Transform:
   m_ObjectHideFlags: 0
@@ -10131,7 +10138,7 @@ Transform:
   m_GameObject: {fileID: 1507136358}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.04822798, y: 0.22180635, z: -0.010248065}
+  m_LocalPosition: {x: 1.53, y: 0.24, z: -0.010248065}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
