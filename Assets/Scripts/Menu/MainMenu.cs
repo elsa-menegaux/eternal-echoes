@@ -34,6 +34,8 @@ public class MainMenu : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         DontDestroyOnLoadDestroyer.killAllObjects = false;
+        GameManager.instance.ResetVisitedRooms();
+        Debug.Log("Reset number of rooms visited.");
         SceneManager.LoadScene("Lobby");
     }
 

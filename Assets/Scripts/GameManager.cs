@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour, IDataPersistence
 {
     public static GameManager instance;
+    public int roomsVisited = 0;
     
     public Dictionary<string, bool> enemyStatus = new Dictionary<string, bool>();
 
@@ -116,5 +117,16 @@ public class GameManager : MonoBehaviour, IDataPersistence
         echoStats.CopyStats(PlayerManager.Instance.playerObject.GetComponent<PlayerStats>());
         echoStats.currentHealth = echoStats.maxHealth;
 
+    }
+
+    // Methods to handle rooms visits so as to know when to trigger the winning screen
+    public void ResetVisitedRooms()
+    {
+        roomsVisited = 0;
+    }
+    
+    public void RoomVisited()
+    {
+        roomsVisited++;
     }
 }
