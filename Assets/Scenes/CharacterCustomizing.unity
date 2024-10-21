@@ -604,8 +604,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 780085427}
+  - component: {fileID: 780085428}
   m_Layer: 0
-  m_Name: CharacterSprites
+  m_Name: PlayerSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -631,6 +632,23 @@ Transform:
   - {fileID: 655777847}
   m_Father: {fileID: 1324947209}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &780085428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780085426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c93589800d6526b4e83a319d3d8e06c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseRenderer: {fileID: 1970811221}
+  hairRenderer: {fileID: 347272125}
+  bootsRenderer: {fileID: 318105532}
+  pantsRenderer: {fileID: 420238560}
+  jacketRenderer: {fileID: 655777848}
 --- !u!1 &1324947208
 GameObject:
   m_ObjectHideFlags: 0
