@@ -76,7 +76,9 @@ public class BattleSystem : MonoBehaviour
         if (enemyData != null)
         {
             // Assign the sprite to your enemy GameObject
-            enemyGO.GetComponent<SpriteRenderer>().sprite = enemyData.sprite;
+            SpriteRenderer spriteRenderer = enemyGO.GetComponent<SpriteRenderer>();
+            spriteRenderer.sprite = enemyData.sprite;
+            spriteRenderer.gameObject.transform.localScale = enemyData.spriteSize; 
 			
 			if (enemyData.animatorController != null)
             {
@@ -95,13 +97,6 @@ public class BattleSystem : MonoBehaviour
 		
 		enemyGO.SetActive(true);
 		
-		if (enemyName == "'Echo'")
-		{
-			// Set the size for Echo enemy
-			Vector3 newSize = new Vector3(0.09f, 0.09f, 1f); // (0.09x original size)
-			enemyGO.transform.localScale = newSize;
-		}
-
         enemyHUD.SetHUD(enemyUnit);
         DialogueText.text = "A shady looking " + enemyUnit.Name + " has snuck up...";
 

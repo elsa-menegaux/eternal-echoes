@@ -9,6 +9,7 @@ public class EnemySpriteDatabase : ScriptableObject
     {
         public string enemyName;
         public Sprite sprite;
+        public Vector3 spriteSize;
         public RuntimeAnimatorController animatorController; // Add animator controller reference
     }
 	
