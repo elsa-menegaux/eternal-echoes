@@ -114,7 +114,7 @@ public class GameManager : MonoBehaviour, IDataPersistence
         }
 
         echoStats.CopyStats(PlayerManager.Instance.playerObject.GetComponent<PlayerStats>());
-
+        echoStats.currentHealth = echoStats.maxHealth;
 
     }
 }
