@@ -20,9 +20,11 @@ public class EnemySpriteDatabase : ScriptableObject
         {
             if (enemyData.enemyName == enemyName)
             {
+				Debug.Log("Sprite "+enemyName+" for "+enemyData.enemyName+" found");
                 return enemyData;
             }
         }
+		Debug.Log("Sprite "+enemyName+" not found");
         return null; // Return null if not found
     }
 }

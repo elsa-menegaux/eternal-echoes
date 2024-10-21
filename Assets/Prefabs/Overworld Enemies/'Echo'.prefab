@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1806597845512044525}
   - component: {fileID: 8188012265082467886}
   m_Layer: 0
-  m_Name: Echo
+  m_Name: '''Echo'''
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -111,7 +111,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.035633743, y: 0.004039049}
+  m_Offset: {x: -0.0006003976, y: -0.08709526}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -122,7 +122,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.36204207, y: 0.5495846}
+  m_Size: {x: 0.34667003, y: 0.51225257}
   m_EdgeRadius: 0
 --- !u!50 &1806597845512044525
 Rigidbody2D:
@@ -192,7 +192,7 @@ Transform:
   m_GameObject: {fileID: 4270090142455065742}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.037, y: 0.085, z: 0}
   m_LocalScale: {x: 0.08, y: 0.08, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -239,12 +239,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 2ba15a461e258b24196b88e86060817d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fdbf613f1d0101843bd34206543aa617, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.96, y: 0.96}
+  m_Size: {x: 10.24, y: 10.24}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

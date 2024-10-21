@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour, IDataPersistence
     public GameObject echoPrefab;
     public string echoSpawnLocationObjectName = "EchoSpawnPosition";
     [Range(0,100)][Tooltip("Percentage Change on range 0-100")]
-    public float echoSpawnChance = 1f; //1f being 1%
+    public float echoSpawnChance = 100f; //1f being 1%
 
 
     public void LoadData(PersistentGameData persistentGameData)
@@ -104,6 +104,7 @@ public class GameManager : MonoBehaviour, IDataPersistence
 
         GameObject echoObject = Instantiate<GameObject>(echoPrefab, spawnLocation, Quaternion.identity);
         EnemyStats echoStats = echoObject.GetComponent<EnemyStats>();
+		//echoObject.name = "'Echo'";
 
         if (echoStats == null)
         {
