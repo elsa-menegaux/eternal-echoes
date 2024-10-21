@@ -76,7 +76,9 @@ public class BattleSystem : MonoBehaviour
         if (enemyData != null)
         {
             // Assign the sprite to your enemy GameObject
-            enemyGO.GetComponent<SpriteRenderer>().sprite = enemyData.sprite;
+            SpriteRenderer spriteRenderer = enemyGO.GetComponent<SpriteRenderer>();
+            spriteRenderer.sprite = enemyData.sprite;
+            spriteRenderer.gameObject.transform.localScale = enemyData.spriteSize; 
 			
 			if (enemyData.animatorController != null)
             {
@@ -92,7 +94,9 @@ public class BattleSystem : MonoBehaviour
         {
             Debug.LogError("Enemy Data not found for enemy: " + enemyName);
         }
-
+		
+		enemyGO.SetActive(true);
+		
         enemyHUD.SetHUD(enemyUnit);
         DialogueText.text = "A shady looking " + enemyUnit.Name + " has snuck up...";
 

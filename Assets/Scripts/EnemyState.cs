@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class EnemyState : MonoBehaviour, IDataPersistence
 {
+    public bool ignoreSaveLoad = false;
     [SerializeField] private string id;
     [ContextMenu("Create GUID for ID")]
     private void generateGuid()
@@ -51,6 +52,7 @@ public class EnemyState : MonoBehaviour, IDataPersistence
 
     public void LoadData(PersistentGameData persistentGameData)
     {
+        if (ignoreSaveLoad) return;
         //On load check this enemies status
         if (persistentGameData.enemyStatus.ContainsKey(id) && persistentGameData.enemyStatus[id] == true)
         {
@@ -61,6 +63,7 @@ public class EnemyState : MonoBehaviour, IDataPersistence
 
     public void SaveData(ref PersistentGameData persistentGameData)
     {
+        if (ignoreSaveLoad) return;
         //do nothing saving is done from GameManager
     }
 }

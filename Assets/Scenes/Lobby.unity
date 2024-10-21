@@ -5825,11 +5825,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5480215009514469588, guid: b29933dd38a7b1a4e859770d8103aa6f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.05
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5480215009514469588, guid: b29933dd38a7b1a4e859770d8103aa6f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.14
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6809514894822255107, guid: b29933dd38a7b1a4e859770d8103aa6f, type: 3}
       propertyPath: m_LocalScale.x
@@ -5934,6 +5934,22 @@ PrefabInstance:
     - target: {fileID: 8392685960312005386, guid: b29933dd38a7b1a4e859770d8103aa6f, type: 3}
       propertyPath: m_Constraints
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8838153305394266851, guid: b29933dd38a7b1a4e859770d8103aa6f, type: 3}
+      propertyPath: m_Size.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8838153305394266851, guid: b29933dd38a7b1a4e859770d8103aa6f, type: 3}
+      propertyPath: m_Size.y
+      value: 0.47752833
+      objectReference: {fileID: 0}
+    - target: {fileID: 8838153305394266851, guid: b29933dd38a7b1a4e859770d8103aa6f, type: 3}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8838153305394266851, guid: b29933dd38a7b1a4e859770d8103aa6f, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.24123585
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10122,6 +10138,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77d72d2f49395cf4c8374fc6ca797776, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dungeonLevels:
+  - Room 1
+  - Room 2
+  - Room 3
+  - Room 4
+  - Room 5
+  echoPrefab: {fileID: 3630588172611822636, guid: 242b1dd60ebf833408485b704ae25eab, type: 3}
+  echoSpawnLocationObjectName: EchoSpawnPosition
+  echoSpawnChance: 5
 --- !u!4 &1507136360
 Transform:
   m_ObjectHideFlags: 0
@@ -10131,7 +10156,7 @@ Transform:
   m_GameObject: {fileID: 1507136358}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.04822798, y: 0.22180635, z: -0.010248065}
+  m_LocalPosition: {x: 1.53, y: 0.24, z: -0.010248065}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

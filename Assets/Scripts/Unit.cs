@@ -21,7 +21,7 @@ public abstract class Unit : MonoBehaviour
 	public bool overrideStats;
 	public bool overrideCalculatedHealth;
 	
-	protected void GetStats()
+	protected void InitStats()
 	{
 		if (overrideStats)
 		{		
@@ -80,5 +80,23 @@ public abstract class Unit : MonoBehaviour
 		}
 		else
 			return false;
+	}
+	public void CopyStats(Unit unit)
+	{
+		this.startingStrength = unit.startingStrength;
+		this.startingEndurance = unit.startingEndurance;
+		this.startingIntelligence = unit.startingIntelligence;
+		this.startingReflexes = unit.startingReflexes;
+		this.startingTechnical = unit.startingTechnical;
+
+		this.maxHealth = unit.maxHealth;
+		this.currentHealth = unit.currentHealth;
+		this.currentDamage = unit.currentDamage;
+		this.currentAbilityDamage = unit.currentAbilityDamage;
+		this.currentCritChance = unit.currentCritChance;
+		this.currentCritDamage = unit.currentCritDamage;
+		this.currentDodgeRate = unit.currentDodgeRate;
+		this.overrideStats = unit.overrideStats;
+		this.overrideCalculatedHealth = unit.overrideCalculatedHealth;
 	}
 }

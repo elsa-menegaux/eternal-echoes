@@ -9,6 +9,7 @@ public class EnemySpriteDatabase : ScriptableObject
     {
         public string enemyName;
         public Sprite sprite;
+        public Vector3 spriteSize;
         public RuntimeAnimatorController animatorController; // Add animator controller reference
     }
 	
@@ -20,9 +21,11 @@ public class EnemySpriteDatabase : ScriptableObject
         {
             if (enemyData.enemyName == enemyName)
             {
+				Debug.Log("Sprite "+enemyName+" for "+enemyData.enemyName+" found");
                 return enemyData;
             }
         }
+		Debug.Log("Sprite "+enemyName+" not found");
         return null; // Return null if not found
     }
 }
