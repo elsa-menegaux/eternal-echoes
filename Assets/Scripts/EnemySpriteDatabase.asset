@@ -19,3 +19,6 @@ MonoBehaviour:
   - enemyName: Computer Virus
     sprite: {fileID: 21300000, guid: 8f6615d0fd4bb7945a950a32523b945c, type: 3}
     animatorController: {fileID: 0}
+  - enemyName: '''Echo'''
+    sprite: {fileID: 21300000, guid: 2ba15a461e258b24196b88e86060817d, type: 3}
+    animatorController: {fileID: 0}
