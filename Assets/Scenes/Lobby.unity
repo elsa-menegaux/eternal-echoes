@@ -10128,7 +10128,9 @@ MonoBehaviour:
   - Room 3
   - Room 4
   - Room 5
-  echoSpawnChance: 1
+  echoPrefab: {fileID: 3630588172611822636, guid: 242b1dd60ebf833408485b704ae25eab, type: 3}
+  echoSpawnLocationObjectName: EchoSpawnPosition
+  echoSpawnChance: 47
 --- !u!4 &1507136360
 Transform:
   m_ObjectHideFlags: 0

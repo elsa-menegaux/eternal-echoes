@@ -14,7 +14,7 @@ public class EnemyStats : Unit
 	// Start is called before the first frame update
     private void Start()
     {
-		GetStats();
+		InitStats();
     }
 	
 	//protected void DetectDeath(GameObject killer) 

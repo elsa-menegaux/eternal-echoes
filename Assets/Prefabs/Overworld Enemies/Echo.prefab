@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2101045087297711770}
   - component: {fileID: 1001531931624427991}
   - component: {fileID: 1806597845512044525}
+  - component: {fileID: 8188012265082467886}
   m_Layer: 0
   m_Name: Echo
   m_TagString: Enemy
@@ -150,6 +151,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &8188012265082467886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3630588172611822636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 119957adf8e546e408b0aa1f86a15523, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ignoreSaveLoad: 0
+  id: 
 --- !u!1 &4270090142455065742
 GameObject:
   m_ObjectHideFlags: 0
@@ -178,7 +193,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
+  m_LocalScale: {x: 0.08, y: 0.08, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4565920152118321486}
@@ -223,9 +238,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: f1e25ba64ac64ed4b8d6eafd8da46b04, type: 3}
-  m_Color: {r: 0, g: 0.26575482, b: 0.5, a: 1}
+  m_SortingOrder: 2
+  m_Sprite: {fileID: 21300000, guid: 2ba15a461e258b24196b88e86060817d, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
