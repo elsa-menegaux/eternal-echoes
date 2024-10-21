@@ -16,13 +16,8 @@ MonoBehaviour:
   - itemName: Neon Sword
     sprite: {fileID: 21300000, guid: b0e0bd17d617e0147b1a0b6dd2bd4cbb, type: 3}
     description: A neon bar stitched to a metal pipe, surprinsingly creating a credible
-      sword.
+      sword. You hit enemies a little bit harder.
     price: 2
-    strengthModifier: 0
-    enduranceModifier: 0
-    intelligenceModifier: 0
-    reflexesModifier: 0
-    technicalModifier: 0
     maxHealthModifier: 0
     healthModifier: 0
     damageModifier: 2
@@ -33,15 +28,11 @@ MonoBehaviour:
   - itemName: Bubble Shield
     sprite: {fileID: 21300000, guid: d8b0fd1a8cf54924593b65ed770ebb45, type: 3}
     description: A glitchy pixel allowed for a protective holographic shield to form
-      around you.
+      around you. Not only do you endure more blows, you also escape enemies more
+      often.
     price: 3
-    strengthModifier: 0
-    enduranceModifier: 0
-    intelligenceModifier: 0
-    reflexesModifier: 0
-    technicalModifier: 0
     maxHealthModifier: 10
-    healthModifier: 0
+    healthModifier: 1
     damageModifier: 0
     abilityDamageModifier: 0
     critChanceModifier: 0
@@ -49,30 +40,21 @@ MonoBehaviour:
     dodgeRateModifier: 3
   - itemName: Cable
     sprite: {fileID: 21300000, guid: 217a7a136086fa24f832ef0b59150db8, type: 3}
-    description: Inspiration can come from the most mundane objects ...
+    description: Inspiration can come from the most mundane objects ... Your ability
+      feels easier to use now.
     price: 5
-    strengthModifier: 0
-    enduranceModifier: 0
-    intelligenceModifier: 1
-    reflexesModifier: 1
-    technicalModifier: 1
     maxHealthModifier: 0
     healthModifier: 0
     damageModifier: 0
-    abilityDamageModifier: 0
+    abilityDamageModifier: 3
     critChanceModifier: 0
     critDamageModifier: 0
     dodgeRateModifier: 0
   - itemName: Disc
     sprite: {fileID: 21300000, guid: 37692a60bd6f2d340a33b67e50d9128f, type: 3}
     description: A computer component is always a rare but precious find, that can
-      bring many advantages.
+      bring many advantages. All your senses are enhanced slightly !
     price: 20
-    strengthModifier: 1
-    enduranceModifier: 1
-    intelligenceModifier: 1
-    reflexesModifier: 1
-    technicalModifier: 1
     maxHealthModifier: 1
     healthModifier: 1
     damageModifier: 1
@@ -83,13 +65,8 @@ MonoBehaviour:
   - itemName: Glasses
     sprite: {fileID: 21300000, guid: a95b3ae6e0db29d4f8a144c5520c2266, type: 3}
     description: A pair of glass to allow for tremendous precision, now that you
-      can see better what's in front of you.
+      can see better what's in front of you. You cause critical damage more often.
     price: 12
-    strengthModifier: 0
-    enduranceModifier: 0
-    intelligenceModifier: 0
-    reflexesModifier: 0
-    technicalModifier: 0
     maxHealthModifier: 0
     healthModifier: 0
     damageModifier: 0
@@ -100,13 +77,9 @@ MonoBehaviour:
   - itemName: Potion
     sprite: {fileID: 21300000, guid: a59219970bd65b7458c87f6314cb9314, type: 3}
     description: This strange liquid should probably not be going in your system.
-      Good thing all of this is a simulation.
+      Good thing all of this is a simulation, and this can actually make you feel
+      more healthier.
     price: 3
-    strengthModifier: 0
-    enduranceModifier: 0
-    intelligenceModifier: 0
-    reflexesModifier: 0
-    technicalModifier: 0
     maxHealthModifier: 0
     healthModifier: 10
     damageModifier: 0
@@ -116,14 +89,9 @@ MonoBehaviour:
     dodgeRateModifier: 0
   - itemName: Gun
     sprite: {fileID: 21300000, guid: cb5c1e6e9ca5d7a408d8e2f4c22208cd, type: 3}
-    description: A scrappy but very convenient tool that is sure to deal a good amount
-      of damage.
+    description: 'A scrappy but very convenient tool that is sure to deal a good
+      amount of damage. '
     price: 2
-    strengthModifier: 0
-    enduranceModifier: 0
-    intelligenceModifier: 0
-    reflexesModifier: 0
-    technicalModifier: 1
     maxHealthModifier: 0
     healthModifier: 0
     damageModifier: 4
@@ -134,17 +102,13 @@ MonoBehaviour:
   - itemName: Shoes
     sprite: {fileID: 21300000, guid: ff0b3008513e3fd409bcbba6cbc04627, type: 3}
     description: Some equipment for your avatar can always help with your movement
-      - and they look great, too !
+      - and they look great, too ! Your speed could probably help you escape even
+      bullets.
     price: 3
-    strengthModifier: 0
-    enduranceModifier: 2
-    intelligenceModifier: 0
-    reflexesModifier: 2
-    technicalModifier: 0
-    maxHealthModifier: 0
+    maxHealthModifier: 5
     healthModifier: 0
     damageModifier: 0
     abilityDamageModifier: 0
-    critChanceModifier: 0
+    critChanceModifier: 2
     critDamageModifier: 0
     dodgeRateModifier: 2

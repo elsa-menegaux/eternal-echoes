@@ -15,11 +15,6 @@ public class ItemsDatabase : ScriptableObject
 
         // Since there is not large number of items and no complex behavior for them, all stats modifiers will be there below. 
         // Most of them relate to stats the player character has, or can have.
-        public int strengthModifier;
-        public int enduranceModifier;
-        public int intelligenceModifier;
-        public int reflexesModifier;
-        public int technicalModifier;
         public int maxHealthModifier;
         public int healthModifier;
         public int damageModifier;

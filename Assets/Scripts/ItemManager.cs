@@ -58,27 +58,6 @@ public class ItemManager : MonoBehaviour
     public void ApplyModifier(ItemsDatabase.ItemData itemData)
     {
         // Check which stats the item alters and change it 
-            if (itemData.strengthModifier != 0)
-            {
-                Debug.Log("Alter strength: " + itemData.strengthModifier);
-                
-            }
-            if (itemData.enduranceModifier != 0)
-            {
-                Debug.Log("Alter endurance: " + itemData.enduranceModifier);
-            }
-            if (itemData.intelligenceModifier != 0)
-            {
-                Debug.Log("Alter intelligence: " + itemData.intelligenceModifier);
-            }
-            if (itemData.reflexesModifier != 0)
-            {
-                Debug.Log("Alter reflexes: " + itemData.reflexesModifier);
-            }
-            if (itemData.technicalModifier != 0)
-            {
-                Debug.Log("Alter technical: " + itemData.technicalModifier);
-            }
             if (itemData.maxHealthModifier != 0)
             {
                 Debug.Log("Alter maxHealth: " + itemData.maxHealthModifier);
