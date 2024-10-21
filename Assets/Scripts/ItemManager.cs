@@ -130,19 +130,19 @@ public class ItemManager : MonoBehaviour
     }
 
     // For testing purposes
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.U))
-        {
-            Debug.Log("Keydown");
-            if (ItemManager.Instance != null)
-            {
-                ItemManager.Instance.UseItem("Bubble Shield");
-            }
-            else
-            {
-                Debug.LogError("ItemManager.Instance is null.");
-            }
-        }
-    }
+    // private void Update()
+    // {
+    //     if (Input.GetKeyDown(KeyCode.U))
+    //     {
+    //         Debug.Log("Keydown");
+    //         if (ItemManager.Instance != null)
+    //         {
+    //             ItemManager.Instance.UseItem("Bubble Shield");
+    //         }
+    //         else
+    //         {
+    //             Debug.LogError("ItemManager.Instance is null.");
+    //         }
+    //     }
+    // }
 }
