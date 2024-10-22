@@ -52,8 +52,8 @@ public class EnemyStats : Unit
 		currentHealth = maxHealth;
 		currentDamage = (int)(currentDamage * scalingFormula);
 		currentAbilityDamage = (int) (currentAbilityDamage * scalingFormula);
-		currentCritChance = (currentCritChance * scalingFormula);
-		currentCritDamage = (currentCritDamage * scalingFormula);
-		currentDodgeRate = (currentDodgeRate * scalingFormula);
+		currentCritChance = (currentCritChance * (scalingFormula/2));
+		currentCritDamage = (currentCritDamage * (scalingFormula/2));
+		currentDodgeRate = (currentDodgeRate * (scalingFormula/2));
 	}
 }
