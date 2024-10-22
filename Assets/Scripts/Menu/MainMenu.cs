@@ -53,5 +53,9 @@ public class MainMenu : MonoBehaviour
         } else {
             continueButton.gameObject.SetActive(false);
         }
+        if (GameManager.instance.gameWon == true)
+        {
+            continueButton.gameObject.SetActive(false);
+        }
     }
 }

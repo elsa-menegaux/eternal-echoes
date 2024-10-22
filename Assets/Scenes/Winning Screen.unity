@@ -207,8 +207,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1487947139}
-        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
-        m_MethodName: ReturnToLobby
+        m_TargetAssemblyTypeName: PauseMenu, Scripts
+        m_MethodName: LoadMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -282,7 +282,7 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: '>>> Go back to the Lobby <<<'
+            m_StringArgument: '>>> Go back to main Menu <<<'
             m_BoolArgument: 0
           m_CallState: 2
   - eventID: 1
@@ -298,7 +298,7 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: Go back to the Lobby
+            m_StringArgument: Go back to main Menu
             m_BoolArgument: 0
           m_CallState: 2
 --- !u!1 &666537006
@@ -697,7 +697,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Go back to the Lobby
+  m_text: Go back to main Menu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: aa46f1df10e054f44a9949819680c8bd, type: 2}
   m_sharedMaterial: {fileID: -2537627577794940701, guid: aa46f1df10e054f44a9949819680c8bd, type: 2}

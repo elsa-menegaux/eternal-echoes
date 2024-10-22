@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour, IDataPersistence
 {
     public static GameManager instance;
     public int roomsVisited = 0;
+    public bool gameWon = true;
     
     public Dictionary<string, bool> enemyStatus = new Dictionary<string, bool>();
 

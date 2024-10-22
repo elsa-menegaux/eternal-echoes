@@ -33,6 +33,7 @@ public class LevelSwitch : MonoBehaviour
             if (GameManager.instance.roomsVisited >= 6)
             {
                 Debug.Log("Game Won, loading Winning screen.");
+                GameManager.instance.gameWon = true;
                 SceneManager.LoadScene("Winning Screen");
                 return;
             }
