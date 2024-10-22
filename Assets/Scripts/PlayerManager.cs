@@ -13,7 +13,7 @@ public class PlayerManager : MonoBehaviour, IDataPersistence
 
     public GameObject playerObject;
     [HideInInspector] public PlayerStats playerStats;
-    public PlayerColourController playerColourController;
+    [HideInInspector] public PlayerColourController playerColourController;
 
     private void Awake()
     {

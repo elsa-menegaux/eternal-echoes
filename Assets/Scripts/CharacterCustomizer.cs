@@ -17,6 +17,7 @@ public class CharacterCustomizer : MonoBehaviour
 
     [Header("Other")]
     public bool loadDefaults = true;
+    public PlayerManager playerManagerToSendColourData;
 
     /// <summary>
     /// Start is called on the frame when a script is enabled just before
@@ -33,6 +34,8 @@ public class CharacterCustomizer : MonoBehaviour
             pantsController.Colour = playerColourData.PantsColour;
             bootsController.Colour = playerColourData.BootsColour;
         }
+
+        
     }
 
     private void Update()
@@ -44,5 +47,35 @@ public class CharacterCustomizer : MonoBehaviour
             jacketController.Colour);
 
         playerColourController.SetColours(playerColourData);
+    }
+
+    public void OnEnable()
+    {
+        if (playerManagerToSendColourData == null)
+        {
+            playerManagerToSendColourData = PlayerManager.Instance;
+        }
+
+        if (playerManagerToSendColourData != null)
+        {
+            PullColorFromPlayerManager();
+        }
+    }
+
+    public void SendColorToPlayerManager()
+    {
+        playerManagerToSendColourData.playerColourController.SetColours(playerColourData);
+    }
+
+    public void PullColorFromPlayerManager()
+    {
+        playerColourData = playerManagerToSendColourData.playerColourController.GetColours();
+        hairController.Colour = playerColourData.HairColour;
+        baseController.Colour = playerColourData.BaseColour;
+        jacketController.Colour = playerColourData.JacketColour;
+        pantsController.Colour = playerColourData.PantsColour;
+        bootsController.Colour = playerColourData.BootsColour;
+        playerColourController.SetColours(playerColourData);
+        
     }
 }
