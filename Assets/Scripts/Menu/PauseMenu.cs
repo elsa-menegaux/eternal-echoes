@@ -38,7 +38,8 @@ public class PauseMenu : MonoBehaviour
 
     public void ReturnToLobby()
     {
+        GameManager.instance.ResetVisitedRooms();
+        Debug.Log("Reset number of rooms visited.");
         SceneManager.LoadScene("Lobby");
     }
-    // NB : we need to reset the game for any of those actions.
 }

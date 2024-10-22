@@ -17,6 +17,10 @@ public class MainMenu : MonoBehaviour
     public void StartGame()
     {
         DontDestroyOnLoadDestroyer.killAllObjects = true;
+        if (GameManager.instance !=null)
+        {
+            GameManager.instance.gameWon = false;
+        }
         
         StartCoroutine("LoadLobby");
     }
@@ -34,6 +38,12 @@ public class MainMenu : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         DontDestroyOnLoadDestroyer.killAllObjects = false;
+        if (GameManager.instance != null)
+        {
+            GameManager.instance.ResetVisitedRooms();
+        }
+       
+        Debug.Log("Reset number of rooms visited.");
         SceneManager.LoadScene("Lobby");
     }
 
@@ -49,6 +59,10 @@ public class MainMenu : MonoBehaviour
         {
             continueButton.gameObject.SetActive(true);
         } else {
+            continueButton.gameObject.SetActive(false);
+        }
+        if (GameManager.instance != null && GameManager.instance.gameWon == true)
+        {
             continueButton.gameObject.SetActive(false);
         }
     }

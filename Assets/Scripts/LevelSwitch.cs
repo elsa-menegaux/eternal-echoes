@@ -20,13 +20,24 @@ public class LevelSwitch : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D entity)
     {
-        // For testing purpose, check the trigger works
         Debug.Log("Exit triggered");
 
         // If it is indeed a player that collided, then switch levels
         if (entity.CompareTag("Player"))
         {
             Debug.Log("Player detected");
+
+            // Depending on how many rooms have been visited, send player to winning screen
+            GameManager.instance.RoomVisited();
+            Debug.Log("Rooms Visited +1");
+            if (GameManager.instance.roomsVisited >= 6)
+            {
+                Debug.Log("Game Won, loading Winning screen.");
+                GameManager.instance.gameWon = true;
+                SceneManager.LoadScene("Winning Screen");
+                return;
+            }
+
             // Randomly select one of the 4 rooms left 
             if (randomIndex)
             {
