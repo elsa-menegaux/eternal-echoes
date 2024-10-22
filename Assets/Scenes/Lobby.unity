@@ -11052,7 +11052,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomsVisited: 0
-  gameWon: 1
+  gameWon: 0
   dungeonLevels:
   - Room 1
   - Room 2
