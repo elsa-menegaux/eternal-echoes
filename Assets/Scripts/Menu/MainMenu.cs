@@ -17,6 +17,7 @@ public class MainMenu : MonoBehaviour
     public void StartGame()
     {
         DontDestroyOnLoadDestroyer.killAllObjects = true;
+        GameData.roomCount=0;
         if (GameManager.instance !=null)
         {
             GameManager.instance.gameWon = false;

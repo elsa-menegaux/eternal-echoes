@@ -10,6 +10,7 @@ public class PersistentGameData
     public string playerScene;
     public SerializableDictionary<string, bool> enemyStatus;
     public PlayerStatsData playerStats;
+    public int roomCount;
     public PlayerColourData playerColourData;
 
 
@@ -23,5 +24,7 @@ public class PersistentGameData
         playerScene = "Room1";
 
         enemyStatus = new SerializableDictionary<string, bool>();
+	
+	roomCount = 0;
     }
 }

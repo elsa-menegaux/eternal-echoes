@@ -81,8 +81,13 @@ public class GameManager : MonoBehaviour, IDataPersistence
             if (echoSpawnRoll <= echoSpawnChance)
             {
                 //spawn Echo
+				echoSpawnChance = 5f;
                 attemptEchoSpawn(); 
             }
+			else
+			{
+				echoSpawnChance *=2;
+			}
         }
     }
 

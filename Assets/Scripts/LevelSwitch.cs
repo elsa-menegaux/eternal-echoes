@@ -54,6 +54,8 @@ public class LevelSwitch : MonoBehaviour
                 //Reset Enemy  Status' before new room
                 GameManager.instance.enemyStatus = new Dictionary<string, bool>();
                 SceneManager.LoadScene(scene);
+				GameData.roomCount++;
+				Debug.Log("RoomCount incremented to "+GameData.roomCount);
             } 
             else {
                 SceneManager.LoadScene(sceneBuildIndex);

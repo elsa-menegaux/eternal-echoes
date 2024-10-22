@@ -106,6 +106,9 @@ public class PlayerManager : MonoBehaviour, IDataPersistence
         {
             playerObject.transform.position = persistentGameData.playerPosition;
         }
+		
+		GameData.roomCount = persistentGameData.roomCount;
+		Debug.Log("RoomCount loaded as "+GameData.roomCount);
 
         if (playerColourController == null)
         {
@@ -121,7 +124,7 @@ public class PlayerManager : MonoBehaviour, IDataPersistence
 
         //Save Current Scene Name// or build index
         persistentGameData.playerScene = SceneManager.GetActiveScene().name;
-
+		    persistentGameData.roomCount = GameData.roomCount;
         persistentGameData.playerColourData = playerColourController.GetColours();
     }
 }
