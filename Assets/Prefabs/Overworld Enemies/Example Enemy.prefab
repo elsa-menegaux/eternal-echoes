@@ -67,6 +67,7 @@ MonoBehaviour:
   Level: 1
   damageModifier: 1
   Reward: 10
+  scaleModifier: 1
 --- !u!114 &2101045087297711770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91,6 +92,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 119957adf8e546e408b0aa1f86a15523, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ignoreSaveLoad: 0
   id: 
 --- !u!61 &1001531931624427991
 BoxCollider2D:
@@ -124,7 +126,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.035633743, y: 0.004039049}
+  m_Offset: {x: 0.036467195, y: -0.14931422}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -135,7 +137,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.36204207, y: 0.5495846}
+  m_Size: {x: 0.39704657, y: 0.27621567}
   m_EdgeRadius: 0
 --- !u!50 &1806597845512044525
 Rigidbody2D:

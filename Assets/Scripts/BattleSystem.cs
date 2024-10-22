@@ -149,6 +149,10 @@ public class BattleSystem : MonoBehaviour
         enemyUnit.currentCritDamage = GameData.EnemyStats.currentCritDamage;
         enemyUnit.currentDodgeRate = GameData.EnemyStats.currentDodgeRate;
         enemyUnit.damageModifier = GameData.EnemyStats.damageModifier;
+		if (enemyUnit.Name != "'Echo'")
+		{
+			enemyUnit.ScaleStats(GameData.roomCount);
+		}
     }
 	
 
@@ -247,6 +251,7 @@ public class BattleSystem : MonoBehaviour
     IEnumerator ReturnToMenu()
     {
         yield return new WaitForSeconds(2f);
+		
         SceneManager.LoadScene("GameOver");
     }
 	

@@ -357,6 +357,7 @@ MonoBehaviour:
   - Room 4
   - Room 5
   echoPrefab: {fileID: 0}
+  echoSpawnLocationObjectName: EchoSpawnPosition
   echoSpawnChance: 1
 --- !u!4 &926830460
 Transform:
@@ -763,11 +764,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4565920152118321486, guid: 65faa96264156914099a74a06531ae25, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.5
+      value: 2.51
       objectReference: {fileID: 0}
     - target: {fileID: 4565920152118321486, guid: 65faa96264156914099a74a06531ae25, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.24
+      value: 2.25
       objectReference: {fileID: 0}
     - target: {fileID: 4565920152118321486, guid: 65faa96264156914099a74a06531ae25, type: 3}
       propertyPath: m_LocalPosition.z
@@ -818,8 +819,20 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4758407438986673267, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: scaleModifier
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758407438986673267, guid: 65faa96264156914099a74a06531ae25, type: 3}
       propertyPath: damageModifier
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758407438986673267, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: currentCritChance
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758407438986673267, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: currentCritDamage
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1021,11 +1034,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4565920152118321486, guid: 65faa96264156914099a74a06531ae25, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.5151938
+      value: -0.55
       objectReference: {fileID: 0}
     - target: {fileID: 4565920152118321486, guid: 65faa96264156914099a74a06531ae25, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.7428095
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 4565920152118321486, guid: 65faa96264156914099a74a06531ae25, type: 3}
       propertyPath: m_LocalPosition.z
