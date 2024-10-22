@@ -28,7 +28,12 @@ public class LevelSwitch : MonoBehaviour
         {
             Debug.Log("Player detected");
             // Randomly select one of the 4 rooms left 
-            if (randomIndex)
+            SceneManager.LoadScene(DetermineNextScene());
+        }
+
+    }
+    public string DetermineNextScene() {
+        if (randomIndex)
             {
                 string scene = "";
                 int roomNum = UnityEngine.Random.Range(0,roomScenes.Count-1);
@@ -41,15 +46,21 @@ public class LevelSwitch : MonoBehaviour
                     }
                 }
                 //Reset Enemy  Status' before new room
-                GameManager.instance.enemyStatus = new Dictionary<string, bool>();
-                SceneManager.LoadScene(scene);
+                if (GameManager.instance != null) {
+                    GameManager.instance.enemyStatus = new Dictionary<string, bool>();
+                } 
+                
+                return scene;
             } 
-            else {
-                SceneManager.LoadScene(sceneBuildIndex);
-                //Reset Enemy  Status' before new room
-                GameManager.instance.enemyStatus = new Dictionary<string, bool>();
-            }
+
+        else {
             
-        }
-    }
+                //Reset Enemy  Status' before new room
+                
+                if (GameManager.instance != null) {
+                    GameManager.instance.enemyStatus = new Dictionary<string, bool>();
+                } 
+                return SceneUtility.GetScenePathByBuildIndex(sceneBuildIndex);
+            }
+    } 
 }
