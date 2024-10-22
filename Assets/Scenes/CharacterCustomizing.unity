@@ -7657,6 +7657,7 @@ MonoBehaviour:
   jacketController: {fileID: 1334552981}
   pantsController: {fileID: 2006905327}
   bootsController: {fileID: 1639035308}
+  loadDefaults: 1
 --- !u!1 &1603644515
 GameObject:
   m_ObjectHideFlags: 0

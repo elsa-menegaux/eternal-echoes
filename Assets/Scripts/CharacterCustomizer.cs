@@ -15,18 +15,24 @@ public class CharacterCustomizer : MonoBehaviour
 
     private PlayerColourData playerColourData;
 
+    [Header("Other")]
+    public bool loadDefaults = true;
+
     /// <summary>
     /// Start is called on the frame when a script is enabled just before
     /// any of the Update methods is called the first time.
     /// </summary>
     private void Start()
     {
-        playerColourData = PlayerColourData.DefaultColours;
-        hairController.Colour = playerColourData.HairColour;
-        baseController.Colour = playerColourData.BaseColour;
-        jacketController.Colour = playerColourData.JacketColour;
-        pantsController.Colour = playerColourData.PantsColour;
-        bootsController.Colour = playerColourData.BootsColour;
+        if (loadDefaults)
+        {
+            playerColourData = PlayerColourData.DefaultColours;
+            hairController.Colour = playerColourData.HairColour;
+            baseController.Colour = playerColourData.BaseColour;
+            jacketController.Colour = playerColourData.JacketColour;
+            pantsController.Colour = playerColourData.PantsColour;
+            bootsController.Colour = playerColourData.BootsColour;
+        }
     }
 
     private void Update()
