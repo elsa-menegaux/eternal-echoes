@@ -42,7 +42,7 @@ public class LevelSwitch : MonoBehaviour
             if (randomIndex)
             {
                 string scene = "";
-                int roomNum = UnityEngine.Random.Range(0,roomScenes.Count-1);
+                int roomNum = UnityEngine.Random.Range(0,roomScenes.Count);
                 scene = roomScenes.ToArray()[roomNum];
                 if (banSameRoom && scene == SceneManager.GetActiveScene().name){
                     while(scene == SceneManager.GetActiveScene().name)
