@@ -5,11 +5,11 @@ using UnityEngine;
 public class PlayerColourData
 {
     // Private fields for encapsulation
-    private Color baseColour;
-    private Color hairColour;
-    private Color bootsColour;
-    private Color pantsColour;
-    private Color jacketColour;
+    [SerializeField] private Color baseColour;
+    [SerializeField] private Color hairColour;
+    [SerializeField] private Color bootsColour;
+    [SerializeField] private Color pantsColour;
+    [SerializeField] private Color jacketColour;
 
     // Static field holding default colors
     public static readonly PlayerColourData DefaultColours = new PlayerColourData(

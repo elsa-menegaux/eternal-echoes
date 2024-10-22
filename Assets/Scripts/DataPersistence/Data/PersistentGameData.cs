@@ -10,6 +10,7 @@ public class PersistentGameData
     public string playerScene;
     public SerializableDictionary<string, bool> enemyStatus;
     public PlayerStatsData playerStats;
+    public PlayerColourData playerColourData;
 
 
     //the values defined in this constructor will be the default values
