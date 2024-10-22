@@ -51,6 +51,8 @@ public class BattleSystem : MonoBehaviour
 		// Set up player from PlayerManager
         GameObject playerGO = Instantiate(playerPrefab, playerBattleStation);
         playerUnit = playerGO.GetComponent<PlayerStats>();
+        PlayerColourController playerColourController = playerGO.GetComponentInChildren<PlayerColourController>();
+        playerColourController.SetColours(PlayerManager.Instance.playerColourController.GetColours());
         SetPlayerStatsFromManager();
 
         playerHUD.SetHUD(playerUnit);

@@ -13,6 +13,7 @@ public class PlayerManager : MonoBehaviour, IDataPersistence
 
     public GameObject playerObject;
     [HideInInspector] public PlayerStats playerStats;
+    [HideInInspector] public PlayerColourController playerColourController;
 
     private void Awake()
     {
@@ -34,18 +35,8 @@ public class PlayerManager : MonoBehaviour, IDataPersistence
         // Assign PlayerStats from the existing player GameObject
         playerStats = playerObject.GetComponent<PlayerStats>();
 
-        // Automatically find and assign PlayerBattleHUD
-        //OverworldHUD = FindObjectOfType<PlayerBattleHUD>();
-        //if (OverworldHUD != null)
-        //{
-        //    Debug.Log("OverworldHUD found and assigned.");
-        //    OverworldHUD.SetHUD(playerStats);
-        //}
-        //else
-        //{
-        //    Debug.LogError("OverworldHUD not found!");
-        //}
-//
+        playerColourController = playerObject.GetComponentInChildren<PlayerColourController>();
+
         if (playerStats != null)
         {
             Debug.Log("PlayerStats assigned: " + playerStats.playerName);
@@ -68,19 +59,7 @@ public class PlayerManager : MonoBehaviour, IDataPersistence
 	
 	private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
 	{
-		// Check if the current scene is the overworld
-		//if (scene.name == "OverworldTestScene") // replace with actual scene name
-		//{
-		//	OverworldHUD = FindObjectOfType<PlayerBattleHUD>();
-		//	if (OverworldHUD != null)
-		//	{
-		//		OverworldHUD.SetHUD(playerStats);
-		//	}
-		//	else
-		//	{
-		//		Debug.LogError("OverworldHUD not found after scene load!");
-		//	}
-		//}
+		
 
         if (scene.name != GameData.PreviousSceneName && scene.name != "BattleScene")
         {
@@ -128,7 +107,11 @@ public class PlayerManager : MonoBehaviour, IDataPersistence
             playerObject.transform.position = persistentGameData.playerPosition;
         }
 
-        
+        if (playerColourController == null)
+        {
+            playerColourController = playerObject.GetComponentInChildren<PlayerColourController>();
+        }
+        playerColourController.SetColours(persistentGameData.playerColourData);
     }
 
     public void SaveData(ref PersistentGameData persistentGameData)
@@ -138,5 +121,7 @@ public class PlayerManager : MonoBehaviour, IDataPersistence
 
         //Save Current Scene Name// or build index
         persistentGameData.playerScene = SceneManager.GetActiveScene().name;
+
+        persistentGameData.playerColourData = playerColourController.GetColours();
     }
 }
