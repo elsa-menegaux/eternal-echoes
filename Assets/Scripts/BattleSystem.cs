@@ -30,7 +30,7 @@ public class BattleSystem : MonoBehaviour
 
     float damageModified;
 	
-	
+	private const float MAX_CHANCE = 100f; // Constant for maximum chance values
 	public string battleSceneName;  // Name of your battle scene
 	
 
@@ -165,29 +165,19 @@ public class BattleSystem : MonoBehaviour
         attackButton.interactable = false;
         healButton.interactable = false;
 		
-		// Check if the enemy dodges the attack
-		float dodgeRoll = Random.Range(0f, 100f);
-		if (dodgeRoll <= enemyUnit.currentDodgeRate)
-		{
-			DialogueText.text = $"{enemyUnit.Name} dodged the attack!";
-			yield return new WaitForSeconds(1f);
-			state = BattleState.ENEMYTURN;
-			StartCoroutine(EnemyTurn());
-			yield break; // Exit the coroutine if the attack is dodged
-		}
+		 // Check if the enemy dodges the attack
+        if (IsDodged())
+        {
+            DialogueText.text = $"{enemyUnit.Name} dodged the attack!";
+            yield return new WaitForSeconds(1f);
+            state = BattleState.ENEMYTURN;
+            StartCoroutine(EnemyTurn());
+            yield break; // Exit the coroutine if the attack is dodged
+        }
 		
-		// Calculate if the attack is a critical hit
-		float critRoll = Random.Range(0f, 100f);
-		float damageModified = playerUnit.currentDamage * playerUnit.damageModifier;
-	
-		if (critRoll <= playerUnit.currentCritChance)
-		{
-			damageModified *= playerUnit.currentCritDamage; // Apply critical damage multiplier
-			DialogueText.text = "Critical hit!";
-			yield return new WaitForSeconds(1f);
-		}
-		
-        bool isDead = enemyUnit.TakeDamage(damageModified);
+		  // Calculate and apply damage
+        float damage = CalculateDamage();
+        bool isDead = enemyUnit.TakeDamage(damage);
 
         enemyHUD.SetHP(enemyUnit.currentHealth);
         DialogueText.text = "The attack was successful!";
@@ -210,6 +200,29 @@ public class BattleSystem : MonoBehaviour
         
         //Check Enemy State
         //Change Battle State based on enemy state
+    }
+	
+	private bool IsDodged()
+    {
+        float dodgeRoll = Random.Range(0f, MAX_CHANCE);
+        return dodgeRoll <= enemyUnit.currentDodgeRate;
+    }
+	
+	private float CalculateDamage()
+    {
+        float damage = playerUnit.currentDamage * playerUnit.damageModifier;
+        if (IsCriticalHit())
+        {
+            damage *= playerUnit.currentCritDamage; // Apply critical damage multiplier
+            DialogueText.text = "Critical hit!";
+        }
+        return damage;
+    }
+	
+	private bool IsCriticalHit()
+    {
+        float critRoll = Random.Range(0f, MAX_CHANCE);
+        return critRoll <= playerUnit.currentCritChance;
     }
 
     IEnumerator PlayerHeal()
@@ -352,7 +365,5 @@ public class BattleSystem : MonoBehaviour
             return;
         StartCoroutine(PlayerHeal());
     }
-	
-	
 }
 
