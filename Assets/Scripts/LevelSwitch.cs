@@ -20,13 +20,24 @@ public class LevelSwitch : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D entity)
     {
-        // For testing purpose, check the trigger works
         Debug.Log("Exit triggered");
 
         // If it is indeed a player that collided, then switch levels
         if (entity.CompareTag("Player"))
         {
             Debug.Log("Player detected");
+
+            // Depending on how many rooms have been visited, send player to winning screen
+            GameManager.instance.RoomVisited();
+            Debug.Log("Rooms Visited +1");
+            if (GameManager.instance.roomsVisited >= 6)
+            {
+                Debug.Log("Game Won, loading Winning screen.");
+                GameManager.instance.gameWon = true;
+                SceneManager.LoadScene("Winning Screen");
+                return;
+            }
+
             // Randomly select one of the 4 rooms left 
             SceneManager.LoadScene(DetermineNextScene());
         }
@@ -36,7 +47,7 @@ public class LevelSwitch : MonoBehaviour
         if (randomIndex)
             {
                 string scene = "";
-                int roomNum = UnityEngine.Random.Range(0,roomScenes.Count-1);
+                int roomNum = UnityEngine.Random.Range(0,roomScenes.Count);
                 scene = roomScenes.ToArray()[roomNum];
                 if (banSameRoom && scene == SceneManager.GetActiveScene().name){
                     while(scene == SceneManager.GetActiveScene().name)
@@ -46,9 +57,13 @@ public class LevelSwitch : MonoBehaviour
                     }
                 }
                 //Reset Enemy  Status' before new room
+
                 if (GameManager.instance != null) {
                     GameManager.instance.enemyStatus = new Dictionary<string, bool>();
                 } 
+                
+				        GameData.roomCount++;
+				        Debug.Log("RoomCount incremented to "+GameData.roomCount);
                 
                 return scene;
             } 

@@ -206,9 +206,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1487947139}
-        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
-        m_MethodName: ReturnToLobby
+      - m_Target: {fileID: 1487947140}
+        m_TargetAssemblyTypeName: MainMenu, Scripts
+        m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -757,7 +757,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -38.919678, y: 0, z: -38.919678, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -781,6 +781,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1487947138}
   - component: {fileID: 1487947139}
+  - component: {fileID: 1487947140}
   m_Layer: 5
   m_Name: GameOverMenu
   m_TagString: Untagged
@@ -824,6 +825,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95fc27772b098ff46b6d1f77bc832944, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1487947140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1487947137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e0c6ae89a3e040428ca56c519eb96c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveFile: save.json
+  continueButton: {fileID: 0}
 --- !u!1 &1662698641
 GameObject:
   m_ObjectHideFlags: 0
