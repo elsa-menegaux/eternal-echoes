@@ -35,7 +35,7 @@ public class ItemManager : MonoBehaviour
     private void Start()
     {
         // Ensure correct initialization
-        dialoguePanel.gameObject.SetActive(false);
+        dialoguePanel.SetActive(false);
        playerManager = FindObjectOfType<PlayerManager>();
        if (playerManager != null)
        {
