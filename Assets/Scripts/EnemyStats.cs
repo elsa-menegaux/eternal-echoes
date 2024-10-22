@@ -53,7 +53,15 @@ public class EnemyStats : Unit
 		currentDamage = (int)(currentDamage * scalingFormula);
 		currentAbilityDamage = (int) (currentAbilityDamage * scalingFormula);
 		currentCritChance = (currentCritChance * (scalingFormula/2));
+		if (currentCritChance > 50f)
+		{
+			currentCritChance = 50f;
+		}
 		currentCritDamage = (currentCritDamage * (scalingFormula/2));
 		currentDodgeRate = (currentDodgeRate * (scalingFormula/2));
+		if (currentDodgeRate > 50f)
+		{
+			currentDodgeRate = 50f;
+		}
 	}
 }
