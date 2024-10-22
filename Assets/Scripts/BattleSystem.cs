@@ -149,6 +149,7 @@ public class BattleSystem : MonoBehaviour
         enemyUnit.currentCritDamage = GameData.EnemyStats.currentCritDamage;
         enemyUnit.currentDodgeRate = GameData.EnemyStats.currentDodgeRate;
         enemyUnit.damageModifier = GameData.EnemyStats.damageModifier;
+		enemyUnit.Reward = GameData.EnemyStats.Reward;
 		if (enemyUnit.Name != "'Echo'")
 		{
 			enemyUnit.ScaleStats(GameData.roomCount);
@@ -237,7 +238,7 @@ public class BattleSystem : MonoBehaviour
         if (state == BattleState.WON)
         {
             DialogueText.text = "You won!";
-			playerUnit.money =+ enemyUnit.Reward;
+			playerUnit.money += enemyUnit.Reward;
 			StartCoroutine(TransitionToOverworld());
         }
         else if (state == BattleState.LOST)
