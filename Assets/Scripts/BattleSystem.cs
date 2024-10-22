@@ -76,7 +76,9 @@ public class BattleSystem : MonoBehaviour
         if (enemyData != null)
         {
             // Assign the sprite to your enemy GameObject
-            enemyGO.GetComponent<SpriteRenderer>().sprite = enemyData.sprite;
+            SpriteRenderer spriteRenderer = enemyGO.GetComponent<SpriteRenderer>();
+            spriteRenderer.sprite = enemyData.sprite;
+            spriteRenderer.gameObject.transform.localScale = enemyData.spriteSize; 
 			
 			if (enemyData.animatorController != null)
             {
@@ -92,7 +94,9 @@ public class BattleSystem : MonoBehaviour
         {
             Debug.LogError("Enemy Data not found for enemy: " + enemyName);
         }
-
+		
+		enemyGO.SetActive(true);
+		
         enemyHUD.SetHUD(enemyUnit);
         DialogueText.text = "A shady looking " + enemyUnit.Name + " has snuck up...";
 
@@ -108,8 +112,8 @@ public class BattleSystem : MonoBehaviour
     {
         if (PlayerManager.Instance.playerStats != null)
         {
-            playerUnit.Name = PlayerManager.Instance.playerStats.Name;
-            playerUnit.Level = PlayerManager.Instance.playerStats.Level;
+            playerUnit.playerName = PlayerManager.Instance.playerStats.playerName;
+            playerUnit.level = PlayerManager.Instance.playerStats.level;
             playerUnit.maxHealth = PlayerManager.Instance.playerStats.maxHealth;
             playerUnit.currentHealth = PlayerManager.Instance.playerStats.currentHealth;
             playerUnit.currentDamage = PlayerManager.Instance.playerStats.currentDamage;
@@ -117,7 +121,7 @@ public class BattleSystem : MonoBehaviour
             playerUnit.currentCritChance = PlayerManager.Instance.playerStats.currentCritChance;
             playerUnit.currentCritDamage = PlayerManager.Instance.playerStats.currentCritDamage;
             playerUnit.currentDodgeRate = PlayerManager.Instance.playerStats.currentDodgeRate;
-            playerUnit.Money = PlayerManager.Instance.playerStats.Money;
+            playerUnit.money = PlayerManager.Instance.playerStats.money;
         }
     }
 
@@ -229,7 +233,7 @@ public class BattleSystem : MonoBehaviour
         if (state == BattleState.WON)
         {
             DialogueText.text = "You won!";
-			playerUnit.Money =+ enemyUnit.Reward;
+			playerUnit.money =+ enemyUnit.Reward;
 			StartCoroutine(TransitionToOverworld());
         }
         else if (state == BattleState.LOST)
@@ -248,8 +252,8 @@ public class BattleSystem : MonoBehaviour
 	
 	IEnumerator TransitionToOverworld()
 	{
-		PlayerManager.Instance.playerStats.Name = playerUnit.Name;
-		PlayerManager.Instance.playerStats.Level= playerUnit.Level;
+		PlayerManager.Instance.playerStats.playerName = playerUnit.playerName;
+		PlayerManager.Instance.playerStats.level= playerUnit.level;
 		PlayerManager.Instance.playerStats.maxHealth = playerUnit.maxHealth;
 		PlayerManager.Instance.playerStats.currentHealth = playerUnit.currentHealth;
 		PlayerManager.Instance.playerStats.currentDamage = playerUnit.currentDamage; 
@@ -257,7 +261,7 @@ public class BattleSystem : MonoBehaviour
 		PlayerManager.Instance.playerStats.currentCritChance = playerUnit.currentCritChance;
 		PlayerManager.Instance.playerStats.currentCritDamage = playerUnit.currentCritDamage;
 		PlayerManager.Instance.playerStats.currentDodgeRate = playerUnit.currentDodgeRate;
-		PlayerManager.Instance.playerStats.Money = playerUnit.Money;
+		PlayerManager.Instance.playerStats.money = playerUnit.money;
 		
 		
 		yield return new WaitForSeconds(2f);

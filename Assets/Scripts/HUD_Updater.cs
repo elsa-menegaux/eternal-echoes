@@ -18,7 +18,7 @@ public class HUDManager : MonoBehaviour
     {
         if (findPlayerStatsInScene)
         {
-            playerStats = GameObject.FindObjectOfType<PlayerManager>().playerStats;
+            playerStats =  PlayerManager.Instance.playerStats;
         }
     }
 
@@ -27,7 +27,7 @@ public class HUDManager : MonoBehaviour
     {   if (playerStats != null)
         {
             updateHealthBar(playerStats.currentHealth, playerStats.maxHealth);
-            updateCoinsValue(playerStats.Money);
+            updateCoinsValue(playerStats.money);
         }
     }
 
@@ -44,9 +44,9 @@ public class HUDManager : MonoBehaviour
     public void SavePlayerName()
     {
         // Access the text from the InputField and store it in the playerName variable
-        playerStats.Name = inputField.text;
+        playerStats.playerName = inputField.text;
         
         // Optionally, you can log or perform any other actions
-        Debug.Log("Player's name is: " + playerStats.Name);
+        Debug.Log("Player's name is: " + playerStats.playerName);
     }
 }

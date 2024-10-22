@@ -246,6 +246,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1439213769}
     m_Modifications:
+    - target: {fileID: 999280017609522788, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: id
+      value: ff7fcbc4-c764-410f-a5c5-a20bfd4f20dc
+      objectReference: {fileID: 0}
     - target: {fileID: 3630588172611822636, guid: 65faa96264156914099a74a06531ae25, type: 3}
       propertyPath: m_Name
       value: Computer Virus (5)
@@ -300,6 +304,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4565920152118321486, guid: 65faa96264156914099a74a06531ae25, type: 3}
   m_PrefabInstance: {fileID: 172267742}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &483307719
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 483307720}
+  m_Layer: 0
+  m_Name: EchoSpawnPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &483307720
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 483307719}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.65, y: 2.15, z: -0.0064903675}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &626123102
 GameObject:
   m_ObjectHideFlags: 0
@@ -445,6 +480,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1439213769}
     m_Modifications:
+    - target: {fileID: 999280017609522788, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: id
+      value: ae16b65c-44ac-499f-ade1-592646b57fdf
+      objectReference: {fileID: 0}
     - target: {fileID: 3630588172611822636, guid: 65faa96264156914099a74a06531ae25, type: 3}
       propertyPath: m_Name
       value: Computer Virus (6)
@@ -581,7 +620,7 @@ Transform:
   m_GameObject: {fileID: 1261175260}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.24, y: -0.38, z: 0}
+  m_LocalPosition: {x: 0.24, y: -0.29, z: 0}
   m_LocalScale: {x: 0.08606317, y: 0.08606317, z: 0.08606317}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -595,6 +634,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1439213769}
     m_Modifications:
+    - target: {fileID: 999280017609522788, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: id
+      value: ee691e68-d0c0-4d14-8e7e-494ffd012c67
+      objectReference: {fileID: 0}
     - target: {fileID: 3630588172611822636, guid: 65faa96264156914099a74a06531ae25, type: 3}
       propertyPath: m_Name
       value: Computer Virus
@@ -657,6 +700,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1439213769}
     m_Modifications:
+    - target: {fileID: 999280017609522788, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: id
+      value: 490e26c9-f18b-4078-91d1-472d1104b154
+      objectReference: {fileID: 0}
     - target: {fileID: 3630588172611822636, guid: 65faa96264156914099a74a06531ae25, type: 3}
       propertyPath: m_Name
       value: Computer Virus (4)
@@ -719,6 +766,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1439213769}
     m_Modifications:
+    - target: {fileID: 999280017609522788, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: id
+      value: d293ff5f-af72-422f-ad58-796df5b83bd0
+      objectReference: {fileID: 0}
     - target: {fileID: 3630588172611822636, guid: 65faa96264156914099a74a06531ae25, type: 3}
       propertyPath: m_Name
       value: Computer Virus (2)
@@ -918,6 +969,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1439213769}
     m_Modifications:
+    - target: {fileID: 999280017609522788, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: id
+      value: 3a94a1d2-4fa0-4026-8bab-617c9dd9446a
+      objectReference: {fileID: 0}
     - target: {fileID: 3630588172611822636, guid: 65faa96264156914099a74a06531ae25, type: 3}
       propertyPath: m_Name
       value: Computer Virus (3)
@@ -980,6 +1035,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1439213769}
     m_Modifications:
+    - target: {fileID: 999280017609522788, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: id
+      value: ce5ca170-84cb-42e2-92e0-4617e7216476
+      objectReference: {fileID: 0}
     - target: {fileID: 3630588172611822636, guid: 65faa96264156914099a74a06531ae25, type: 3}
       propertyPath: m_Name
       value: Computer Virus (1)
@@ -1044,3 +1103,4 @@ SceneRoots:
   - {fileID: 141418704}
   - {fileID: 1439213769}
   - {fileID: 1261175261}
+  - {fileID: 483307720}
