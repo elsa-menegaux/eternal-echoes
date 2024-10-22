@@ -1,7 +1,4 @@
 using System;
-using log4net.Appender;
-using UnityEngine;
-
 
 //Serializeable Data type for PlayerStats
 [Serializable]
