@@ -17,7 +17,7 @@ public class MainMenu : MonoBehaviour
     public void StartGame()
     {
         DontDestroyOnLoadDestroyer.killAllObjects = true;
-        
+        GameManager.instance.gameWon = false;
         StartCoroutine("LoadLobby");
     }
 
