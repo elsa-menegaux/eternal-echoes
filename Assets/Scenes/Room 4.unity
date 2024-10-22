@@ -294,6 +294,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4758407438986673267, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: maxHealth
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758407438986673267, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: currentHealth
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -665,6 +673,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4758407438986673267, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: maxHealth
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758407438986673267, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: currentHealth
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -819,6 +835,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4758407438986673267, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: maxHealth
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758407438986673267, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: currentHealth
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -955,6 +979,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4758407438986673267, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: maxHealth
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758407438986673267, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: currentHealth
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1002,8 +1034,99 @@ Transform:
   - {fileID: 172267743}
   - {fileID: 1062460077}
   - {fileID: 564906682}
+  - {fileID: 1444862194}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1444862193
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1439213769}
+    m_Modifications:
+    - target: {fileID: 999280017609522788, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: id
+      value: bb3eee8b-9863-42ec-a163-eeeeb42378e7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2327758066971789626, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3512e34c8dbb4d4469ee6a7a6f0adf5b, type: 3}
+    - target: {fileID: 3630588172611822636, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: m_Name
+      value: Firewall
+      objectReference: {fileID: 0}
+    - target: {fileID: 4565920152118321486, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.5557566
+      objectReference: {fileID: 0}
+    - target: {fileID: 4565920152118321486, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.430783
+      objectReference: {fileID: 0}
+    - target: {fileID: 4565920152118321486, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4565920152118321486, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4565920152118321486, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4565920152118321486, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4565920152118321486, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4565920152118321486, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4565920152118321486, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4565920152118321486, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758407438986673267, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: Name
+      value: Firewall
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758407438986673267, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: currentDamage
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758407438986673267, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: currentDodgeRate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758407438986673267, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: currentCritChance
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758407438986673267, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: currentCritDamage
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 65faa96264156914099a74a06531ae25, type: 3}
+--- !u!4 &1444862194 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4565920152118321486, guid: 65faa96264156914099a74a06531ae25, type: 3}
+  m_PrefabInstance: {fileID: 1444862193}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1543182485
 GameObject:
   m_ObjectHideFlags: 0
@@ -1119,6 +1242,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Computer Virus (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3630588172611822636, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4565920152118321486, guid: 65faa96264156914099a74a06531ae25, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.53
@@ -1158,6 +1285,14 @@ PrefabInstance:
     - target: {fileID: 4565920152118321486, guid: 65faa96264156914099a74a06531ae25, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758407438986673267, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: maxHealth
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758407438986673267, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: currentHealth
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1224,6 +1359,14 @@ PrefabInstance:
     - target: {fileID: 4565920152118321486, guid: 65faa96264156914099a74a06531ae25, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758407438986673267, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: maxHealth
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758407438986673267, guid: 65faa96264156914099a74a06531ae25, type: 3}
+      propertyPath: currentHealth
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

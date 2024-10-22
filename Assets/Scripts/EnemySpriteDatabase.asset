@@ -25,3 +25,7 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: 736d1447f1c093b49ba24cc0c4fa2a37, type: 3}
     spriteSize: {x: 3, y: 3, z: 3}
     animatorController: {fileID: 0}
+  - enemyName: Firewall
+    sprite: {fileID: 21300000, guid: 3512e34c8dbb4d4469ee6a7a6f0adf5b, type: 3}
+    spriteSize: {x: 0.8, y: 0.8, z: 0.8}
+    animatorController: {fileID: 0}
