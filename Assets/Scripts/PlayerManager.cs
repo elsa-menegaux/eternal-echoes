@@ -59,19 +59,7 @@ public class PlayerManager : MonoBehaviour, IDataPersistence
 	
 	private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
 	{
-		// Check if the current scene is the overworld
-		//if (scene.name == "OverworldTestScene") // replace with actual scene name
-		//{
-		//	OverworldHUD = FindObjectOfType<PlayerBattleHUD>();
-		//	if (OverworldHUD != null)
-		//	{
-		//		OverworldHUD.SetHUD(playerStats);
-		//	}
-		//	else
-		//	{
-		//		Debug.LogError("OverworldHUD not found after scene load!");
-		//	}
-		//}
+		
 
         if (scene.name != GameData.PreviousSceneName && scene.name != "BattleScene")
         {
@@ -119,6 +107,10 @@ public class PlayerManager : MonoBehaviour, IDataPersistence
             playerObject.transform.position = persistentGameData.playerPosition;
         }
 
+        if (playerColourController == null)
+        {
+            playerColourController = playerObject.GetComponentInChildren<PlayerColourController>();
+        }
         playerColourController.SetColours(persistentGameData.playerColourData);
     }
 
